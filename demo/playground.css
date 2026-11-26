@@ -35,6 +35,17 @@
   font: inherit;
 }
 
+.playground-action,
+.playground-hide {
+  padding: 4px 10px;
+  border: 1px solid var(--ps-border, #d0d7de);
+  border-radius: 6px;
+  background: var(--ps-bg, #ffffff);
+  color: var(--ps-fg, #1f2328);
+  font: inherit;
+  cursor: pointer;
+}
+
 .playground-hide {
   margin-left: auto;
   padding: 4px 10px;

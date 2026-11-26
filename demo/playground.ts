@@ -1,7 +1,15 @@
 import { renderScene } from "../src/index";
-import type { SceneTheme } from "../src/scene";
+import type { Scene, SceneTheme } from "../src/scene";
 import { SCENARIOS, type Scenario } from "./scenarios";
 import { toSearch, type PlaygroundState } from "./state";
+
+export type PlaygroundAction = "run" | "reset";
+
+export interface ControlPatch {
+  scenario?: Scenario;
+  theme?: SceneTheme;
+  controls?: boolean;
+}
 
 export function renderControls(state: PlaygroundState, hints: string[]): string {
   const options = SCENARIOS.map(
@@ -20,6 +28,8 @@ export function renderControls(state: PlaygroundState, hints: string[]): string 
         <option value="dark"${state.theme === "dark" ? " selected" : ""}>Dark</option>
       </select>
     </label>
+    <button class="playground-action" type="button" data-run>Run workflow</button>
+    <button class="playground-action" type="button" data-reset>Reset</button>
     <button class="playground-hide" type="button" data-hide>Hide controls</button>
     ${hint}
   </form>`;
@@ -27,14 +37,18 @@ export function renderControls(state: PlaygroundState, hints: string[]): string 
 
 export function applyState(state: PlaygroundState): void {
   document.documentElement.dataset.theme = state.theme;
-  const sceneRoot = document.querySelector<HTMLElement>(".js-live-scene");
-  if (sceneRoot) sceneRoot.innerHTML = renderScene(state.scenario.scene, { theme: state.theme });
   document.body.classList.toggle("playground-headless", !state.controls);
   history.replaceState(null, "", `${location.pathname}${toSearch(state)}`);
 }
 
+export function mountScene(scene: Scene, theme: SceneTheme): void {
+  const root = document.querySelector<HTMLElement>(".js-live-scene");
+  if (root) root.innerHTML = renderScene(scene, { theme });
+}
+
 export function wireControls(
-  onChange: (patch: { scenario?: Scenario; theme?: SceneTheme; controls?: boolean }) => void,
+  onChange: (patch: ControlPatch) => void,
+  onAction: (action: PlaygroundAction) => void,
 ): void {
   const form = document.querySelector<HTMLFormElement>("[data-controls]");
   if (!form) return;
@@ -43,7 +57,15 @@ export function wireControls(
     if (target.matches("[data-scenario]")) onChange({ scenario: findScenario(target.value) });
     if (target.matches("[data-theme]")) onChange({ theme: target.value as SceneTheme });
   });
-  form.querySelector("[data-hide]")?.addEventListener("click", () => onChange({ controls: false }));
+  form.addEventListener("click", (event) => {
+    const button = (event.target as Element).closest<HTMLElement>(
+      "[data-run], [data-reset], [data-hide]",
+    );
+    if (!button) return;
+    if (button.matches("[data-hide]")) onChange({ controls: false });
+    if (button.matches("[data-run]")) onAction("run");
+    if (button.matches("[data-reset]")) onAction("reset");
+  });
 }
 
 function findScenario(id: string): Scenario | undefined {

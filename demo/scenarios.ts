@@ -30,13 +30,18 @@ export const SCENARIOS: Scenario[] = [
             createdAt: new Date(NOW - 4 * 60 * 1000).toISOString(),
             body: `### CI summary
 
-| Check | Status |
-| :--- | :---: |
-| **Lint** | ✅ Passed |
-| **Tests** | 🟡 Running |
+<!-- slot:status -->
+
+Waiting for the workflow to run.
+
+<!-- /slot:status -->
 
 - [x] OpenAPI validated
-- [ ] E2E smoke completed`,
+- [ ] E2E smoke completed
+
+<!-- slot:footer -->
+
+<!-- /slot:footer -->`,
           },
         },
         { kind: "checks" },
