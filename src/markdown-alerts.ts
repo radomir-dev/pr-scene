@@ -14,7 +14,7 @@ const ALERTS: Record<AlertKind, { title: string; icon: IconName }> = {
 const MARKER = /^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*/i;
 
 export function transformAlerts(root: Element): void {
-  for (const quote of [...root.querySelectorAll("blockquote")]) {
+  for (const quote of Array.from(root.querySelectorAll("blockquote"))) {
     const paragraph = quote.querySelector("p");
     const match = paragraph ? MARKER.exec(paragraph.textContent ?? "") : null;
     if (!paragraph || !match) continue;
