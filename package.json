@@ -50,6 +50,9 @@
     "format": "oxfmt src demo test scripts vite.config.ts vitest.config.ts package.json tsconfig.json tsconfig.build.json",
     "format:check": "oxfmt --check src demo test scripts vite.config.ts vitest.config.ts package.json tsconfig.json tsconfig.build.json"
   },
+  "dependencies": {
+    "@primer/octicons": "^19.43.0"
+  },
   "devDependencies": {
     "@types/node": "^22.0.0",
     "@vitest/coverage-v8": "^5.1.2",

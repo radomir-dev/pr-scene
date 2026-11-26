@@ -1,0 +1,44 @@
+.ps-root .ps-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.ps-root .ps-status {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ps-root .ps-status--passed {
+  color: var(--ps-success-fg);
+}
+
+.ps-root .ps-status--failed {
+  color: var(--ps-danger-fg);
+}
+
+.ps-root .ps-status--running {
+  color: var(--ps-attention-fg);
+}
+
+.ps-root .ps-status--queued {
+  color: var(--ps-fg-muted);
+}
+
+@keyframes ps-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ps-root .ps-spinner {
+  animation: ps-spin 1s linear infinite;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ps-root .ps-spinner {
+    animation: none;
+  }
+}
