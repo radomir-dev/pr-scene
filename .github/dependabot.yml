@@ -8,6 +8,13 @@ updates:
     open-pull-requests-limit: 5
     cooldown:
       default-days: 7
+    ignore: # majors blocked by the Node 22 runtime or typedoc's peer range
+      - dependency-name: "semantic-release"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
     groups:
       storybook:
         patterns: ["storybook", "@storybook/*", "vitest", "@vitest/*", "@vitest/browser*"]
