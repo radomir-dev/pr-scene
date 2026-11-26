@@ -22,19 +22,6 @@ export const Comment: StoryObj<{ comment: Comment }> = {
   render: ({ comment }) => renderComment(comment, { now: Date.parse("2026-11-26T12:00:00Z") }),
 };
 
-export const Header: StoryObj = {
-  name: "PR header",
-  render: (_args, context) =>
-    renderScene(actionsScene("running"), { theme: themeFrom(context) }).split(
-      '<div class="ps-timeline"',
-    )[0] + "</article></div>",
-};
-
-export const Checks: StoryObj = {
-  name: "Checks box",
-  render: (_args, context) => renderScene(actionsScene("running"), { theme: themeFrom(context) }),
-};
-
 export const Timeline: StoryObj = {
   name: "Timeline",
   render: (_args, context) => renderScene(actionsScene("merged"), { theme: themeFrom(context) }),
