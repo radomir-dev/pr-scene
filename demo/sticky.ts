@@ -10,7 +10,7 @@ const ACTIONS = `<!-- pr-slots -->
 <tr>
 <td>
 
-- [ ] <!-- toggle:docs -->
+- [x] <!-- toggle:docs -->
 
 </td>
 <td>

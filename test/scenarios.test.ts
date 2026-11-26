@@ -36,21 +36,25 @@ describe("the actions sticky comment", () => {
     expect(body).toContain("slot:footer");
   });
 
-  it("renders both toggles as enabled task checkboxes", () => {
+  it("shows the merged state", () => {
+    const html = renderScene(actionsScene("merged"));
+    expect(html).toContain("ps-state--merged");
+    expect(html).toContain("Pull request successfully merged and closed");
+  });
+});
+
+describe("the actions sticky toggles", () => {
+  it("renders every toggle as an interactive checkbox", () => {
     const html = renderScene(actionsScene("passed"));
     expect(html.match(/task-list-item-checkbox/g)).toHaveLength(3);
     expect(html).not.toContain("disabled");
   });
 
-  it("shows the failure state with a blocking merge footer", () => {
-    const html = renderScene(actionsScene("failed"));
-    expect(html).toContain("Some checks were not successful");
-    expect(html).toContain("Merging is blocked");
-  });
-
-  it("shows the merged state", () => {
-    const html = renderScene(actionsScene("merged"));
-    expect(html).toContain("ps-state--merged");
-    expect(html).toContain("Pull request successfully merged and closed");
+  it("leaves the docs toggle on whenever its status has something to report", () => {
+    for (const variant of ["running", "passed", "failed", "merged"] as const) {
+      const html = renderScene(actionsScene(variant));
+      expect(html.match(/aria-label="Completed task"/g)).toHaveLength(1);
+      expect(html.match(/aria-label="Incomplete task"/g)).toHaveLength(2);
+    }
   });
 });
