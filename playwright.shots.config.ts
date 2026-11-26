@@ -13,7 +13,7 @@ export default defineConfig({
   use: { baseURL: url, deviceScaleFactor: 2 },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"], deviceScaleFactor: 2 } }],
   webServer: {
-    command: `npm run build:demo && npm run preview -- --host 127.0.0.1 --port ${port} --strictPort`,
+    command: `npm run build:demo && npm run preview -- --host 127.0.0.1 --port ${port} --strictPort --bypass-lock`,
     url,
     reuseExistingServer: !process.env.CI,
     timeout: 180_000,

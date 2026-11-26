@@ -20,7 +20,7 @@ export default defineConfig({
     { name: "webkit", use: { ...devices["Desktop Safari"] } },
   ],
   webServer: {
-    command: `npm run build:demo && npm run preview -- --host 127.0.0.1 --port ${port} --strictPort`,
+    command: `npm run build:demo && npm run preview -- --host 127.0.0.1 --port ${port} --strictPort --bypass-lock`,
     url,
     reuseExistingServer: !process.env.CI,
     timeout: 180_000,
