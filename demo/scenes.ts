@@ -1,58 +1,6 @@
 import type { CheckRun, Comment, Scene, TimelineItem } from "../src/scene";
-
-const STICKY = `<!-- pr-slots -->
-
-<table>
-<thead>
-<tr><th>Enabled</th><th>Check</th><th>Status</th></tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-- [ ] <!-- toggle:preview -->
-
-</td>
-<td>
-
-**Preview**
-
-</td>
-<td>
-
-<!-- slot:preview -->
-
-Waiting for the workflow to run.
-
-<!-- /slot:preview -->
-
-</td>
-</tr>
-<tr>
-<td>
-
-- [ ] <!-- toggle:visual -->
-
-</td>
-<td>
-
-**Visual comparison**
-
-</td>
-<td>
-
-<!-- slot:visual -->
-
-<!-- /slot:visual -->
-
-</td>
-</tr>
-</tbody>
-</table>
-
-<!-- slot:footer -->
-
-<!-- /slot:footer -->`;
+import { actionsCommentBody, RELEASE_CHECKLIST_BODY } from "./sticky";
+import type { ActionsVariant } from "./sticky";
 
 const PR = {
   title: "feat(api): add sliding-window rate limiter middleware",
@@ -61,8 +9,6 @@ const PR = {
   base: "main",
   head: "feat/rate-limiter",
 };
-
-export type ActionsVariant = "running" | "passed" | "failed" | "merged";
 
 const CHECKS: Record<ActionsVariant, CheckRun[]> = {
   running: [
@@ -85,13 +31,6 @@ const CHECKS: Record<ActionsVariant, CheckRun[]> = {
     { name: "Unit & integration", status: "passed", workflow: "CI", duration: "1m 12s" },
     { name: "Docker build", status: "passed", workflow: "Deploy", duration: "48s" },
   ],
-};
-
-const PREVIEW: Record<ActionsVariant, string> = {
-  running: "🟡 Building preview…",
-  passed: "[pr-482.preview.internal](https://pr-482.preview.internal) ✅",
-  failed: "❌ Tests failed, no preview",
-  merged: "Merged and deployed ✅",
 };
 
 export function actionsScene(variant: ActionsVariant): Scene {
@@ -121,32 +60,13 @@ function buildTimeline(variant: ActionsVariant, merged: boolean): TimelineItem[]
 }
 
 function actionsComment(variant: ActionsVariant): Comment {
-  const body = STICKY.replace(
-    /<!-- slot:preview -->[\s\S]*?<!-- \/slot:preview -->/,
-    `<!-- slot:preview -->\n\n${PREVIEW[variant]}\n\n<!-- /slot:preview -->`,
-  );
   return {
     author: "github-actions",
     bot: true,
     createdAt: new Date(Date.now() - 12 * 60 * 1000).toISOString(),
-    body,
+    body: actionsCommentBody(variant),
   };
 }
-
-const RELEASE_STICKY = `### CI summary
-
-<!-- slot:status -->
-
-Waiting for the workflow to run.
-
-<!-- /slot:status -->
-
-- [x] OpenAPI validated
-- [ ] E2E smoke completed
-
-<!-- slot:footer -->
-
-<!-- /slot:footer -->`;
 
 export function releaseChecklistScene(): Scene {
   return {
@@ -165,7 +85,7 @@ export function releaseChecklistScene(): Scene {
           author: "github-actions",
           bot: true,
           createdAt: new Date(Date.now() - 4 * 60 * 1000).toISOString(),
-          body: RELEASE_STICKY,
+          body: RELEASE_CHECKLIST_BODY,
         },
       },
       { kind: "checks" },

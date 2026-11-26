@@ -30,14 +30,15 @@ describe("the actions sticky comment", () => {
     const item = scene.timeline?.[0];
     const body = item?.kind === "comment" ? item.comment.body : "";
     expect(body).toContain("<!-- pr-slots -->");
-    expect(body).toContain("toggle:preview");
+    expect(body).toContain("toggle:docs");
+    expect(body).toContain("toggle:mutation");
     expect(body).toContain("toggle:visual");
     expect(body).toContain("slot:footer");
   });
 
   it("renders both toggles as enabled task checkboxes", () => {
     const html = renderScene(actionsScene("passed"));
-    expect(html.match(/task-list-item-checkbox/g)).toHaveLength(2);
+    expect(html.match(/task-list-item-checkbox/g)).toHaveLength(3);
     expect(html).not.toContain("disabled");
   });
 

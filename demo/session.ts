@@ -6,15 +6,19 @@ const SHA = "a8f92c1";
 const RUN_LINK = `[Workflow run #1234](${RUN_URL})`;
 const RUNNING_SLOTS = {
   status: "🟡 Workflow running…",
-  preview: "🟡 Workflow running…",
+  docs: "🟡 Building preview…",
   footer: "",
 };
 const DONE_SLOTS = {
   status: "✅ All checks passed",
-  preview: "✅ All checks passed",
+  docs: "[API docs for this PR](https://pr-482.docs.internal) ✅",
   footer: RUN_LINK,
 };
-const MERGED_SLOTS = { status: "🎉 Merged", preview: "🎉 Merged", footer: RUN_LINK };
+const MERGED_SLOTS = {
+  status: "🎉 Merged",
+  docs: "🎉 Merged and deployed ✅",
+  footer: RUN_LINK,
+};
 
 export function toggleTaskInScene(scene: Scene, index: number, at: string): Scene {
   return withFirstComment(scene, (comment) => ({
