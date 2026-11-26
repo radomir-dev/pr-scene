@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/radomir-dev/pr-scene/compare/v1.6.0...v1.6.1) (2026-11-26)
+
+
+### Bug Fixes
+
+* **demo:** align the hero copy with the scene card ([93118fb](https://github.com/radomir-dev/pr-scene/commit/93118fb9914776d7fa10a935e5244086cb540375))
+
 # [1.6.0](https://github.com/radomir-dev/pr-scene/compare/v1.5.0...v1.6.0) (2026-11-26)
 
 
