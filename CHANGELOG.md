@@ -1,3 +1,16 @@
+# [1.6.0](https://github.com/radomir-dev/pr-scene/compare/v1.5.0...v1.6.0) (2026-11-26)
+
+
+### Bug Fixes
+
+* **demo:** leave skipped jobs alone in the simulated run ([9a88b74](https://github.com/radomir-dev/pr-scene/commit/9a88b743f0a25b0a935581a946dcbefabd17985c))
+* **styles:** keep the timeline rail behind avatars ([bb8bea7](https://github.com/radomir-dev/pr-scene/commit/bb8bea7c69c26846de57b631344d4c028528e487))
+
+
+### Features
+
+* **checks:** report skipped runs and list the optional jobs ([8803a08](https://github.com/radomir-dev/pr-scene/commit/8803a08618aac33ee8f00105779c8811c9cd4942))
+
 # [1.5.0](https://github.com/radomir-dev/pr-scene/compare/v1.4.0...v1.5.0) (2026-11-26)
 
 
