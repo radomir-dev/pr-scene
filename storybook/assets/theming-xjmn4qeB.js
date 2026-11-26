@@ -1,0 +1,1 @@
+import{Dt as e,Rt as t}from"./DocsRenderer-JROSPFPF-Csdnnd0s.js";e();export{t as color};
