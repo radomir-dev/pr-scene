@@ -1,6 +1,6 @@
 {
   "name": "pr-scene",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Render GitHub pull request scenes from fixtures for demos, docs and screenshots",
   "keywords": [
     "demo",

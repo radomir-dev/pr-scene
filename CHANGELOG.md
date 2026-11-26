@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/radomir-dev/pr-scene/compare/v1.0.0...v1.1.0) (2026-11-26)
+
+
+### Features
+
+* **storybook:** document components and scenarios statically ([4c75481](https://github.com/radomir-dev/pr-scene/commit/4c75481c8ea321f9d27e393a74ba89b0bb1da835))
+
 # 1.0.0 (2026-11-26)
 
 
