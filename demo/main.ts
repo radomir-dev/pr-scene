@@ -12,7 +12,7 @@ import {
 } from "./playground";
 import { parseState, type PlaygroundState } from "./state";
 import "@primer/css/dist/markdown.css";
-import "../src/styles/app.css";
+import "../src/styles/index.css";
 import "./chrome.css";
 import "./landing.css";
 import "./landing-scene.css";

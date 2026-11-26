@@ -23,13 +23,13 @@ export default defineConfig({
     {
       command: `npm run build:demo && npm run preview -- --host 127.0.0.1 --port ${port} --strictPort --bypass-lock`,
       url,
-      reuseExistingServer: !process.env.CI,
+      reuseExistingServer: false,
       timeout: 180_000,
     },
     {
       command: "npm run build:storybook && node scripts/serve.mjs storybook-static 4315",
       url: "http://127.0.0.1:4315/iframe.html",
-      reuseExistingServer: !process.env.CI,
+      reuseExistingServer: false,
       timeout: 180_000,
     },
   ],

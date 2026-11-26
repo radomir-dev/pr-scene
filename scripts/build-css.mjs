@@ -6,7 +6,9 @@ const primer = await readFile(
   new URL("../node_modules/@primer/css/dist/markdown.css", import.meta.url),
   "utf8",
 );
-const files = (await readdir(source)).filter((file) => file.endsWith(".css")).sort();
+const files = (await readdir(source))
+  .filter((file) => file.endsWith(".css") && file !== "index.css")
+  .sort();
 const parts = await Promise.all(files.map((file) => readFile(new URL(file, source), "utf8")));
 
 await mkdir(new URL("../dist/", import.meta.url), { recursive: true });
