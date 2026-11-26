@@ -80,7 +80,7 @@
     "**/*.{json,yml,yaml,md,css,html}": [
       "oxfmt"
     ],
-    "{src,demo}/**/!(*.d).ts": [
+    "src/**/!(*.d).ts": [
       "vitest related --run --passWithNoTests=false"
     ]
   },
