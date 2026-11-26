@@ -1,0 +1,39 @@
+"area: library":
+  - changed-files:
+      - any-glob-to-any-file: ["src/**"]
+
+"area: markdown":
+  - changed-files:
+      - any-glob-to-any-file:
+          [
+            "src/markdown.ts",
+            "src/markdown-normalize.ts",
+            "src/styles/markdown.css",
+            "test/fixtures/markdown/**",
+          ]
+
+"area: demo":
+  - changed-files:
+      - any-glob-to-any-file: ["demo/**", "index.html", "public/**"]
+
+"area: storybook":
+  - changed-files:
+      - any-glob-to-any-file: ["stories/**", ".storybook/**"]
+
+"area: tooling":
+  - changed-files:
+      - any-glob-to-any-file:
+          [
+            "scripts/**",
+            "*.json",
+            ".github/**",
+            "*.config.ts",
+            ".oxlintrc.json",
+            ".oxfmtrc.json",
+            "lefthook.yml",
+            "mise.toml",
+          ]
+
+"area: docs":
+  - changed-files:
+      - any-glob-to-any-file: ["docs/**", "README.md", "CONTRIBUTING.md", "CHANGELOG.md"]

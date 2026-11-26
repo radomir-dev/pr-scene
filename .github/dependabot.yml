@@ -1,0 +1,37 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      storybook:
+        patterns: ["storybook", "@storybook/*", "vitest", "@vitest/*", "@vitest/browser*"]
+      release:
+        patterns: ["semantic-release", "@semantic-release/*", "@commitlint/*"]
+      tooling:
+        patterns:
+          - "oxlint"
+          - "oxfmt"
+          - "knip"
+          - "publint"
+          - "@arethetypeswrong/*"
+          - "size-limit"
+          - "@size-limit/*"
+          - "dependency-cruiser"
+          - "typedoc"
+          - "typedoc-plugin-markdown"
+          - "lefthook"
+          - "lint-staged"
+      testing:
+        patterns: ["@playwright/test", "jsdom", "@vitest/coverage-v8"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      actions:
+        patterns: ["*"]

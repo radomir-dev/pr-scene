@@ -66,7 +66,8 @@
     "check:package": "publint --strict && attw --pack . --ignore-rules cjs-resolves-to-esm no-resolution && node scripts/check-pack.mjs",
     "check:size": "size-limit",
     "check:unused": "knip",
-    "check:deps": "depcruise src --config .dependency-cruiser.cjs"
+    "check:deps": "depcruise src --config .dependency-cruiser.cjs",
+    "check:actions": "node scripts/actionlint.mjs"
   },
   "dependencies": {
     "dompurify": "^3.5.0",

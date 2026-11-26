@@ -48,6 +48,13 @@ export const STEPS: Step[] = [
   },
   { name: "e2e", title: "e2e", phase: "independent", script: "test:e2e", slow: true },
   {
+    name: "actions",
+    title: "workflow syntax",
+    phase: "independent",
+    script: "check:actions",
+    slow: true,
+  },
+  {
     name: "unused",
     title: "unused files and dependencies",
     phase: "independent",
