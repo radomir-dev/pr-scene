@@ -5,6 +5,8 @@
 }
 
 .ps-root .ps-avatar {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-shrink: 0;
   align-items: center;
