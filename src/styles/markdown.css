@@ -1,0 +1,59 @@
+.ps-root {
+  --base-size-4: 4px;
+  --base-size-8: 8px;
+  --base-size-16: 16px;
+  --base-size-24: 24px;
+  --base-text-weight-semibold: 600;
+  --fontStack-sansSerif: var(--ps-font-sans);
+  --color-canvas-default: var(--ps-bg);
+  --color-canvas-subtle: var(--ps-bg-subtle);
+  --color-fg-default: var(--ps-fg);
+  --color-fg-muted: var(--ps-fg-muted);
+  --color-border-default: var(--ps-border);
+  --color-border-muted: var(--ps-border-muted);
+  --color-neutral-muted: rgba(175, 184, 193, 0.2);
+  --color-accent-emphasis: #0969da;
+  --color-danger-fg: var(--ps-danger-fg);
+  --bgColor-default: var(--ps-bg);
+  --bgColor-muted: var(--ps-bg-subtle);
+  --bgColor-neutral-muted: var(--color-neutral-muted);
+  --borderColor-default: var(--ps-border);
+  --borderColor-muted: var(--ps-border-muted);
+  --borderColor-accent-emphasis: var(--color-accent-emphasis);
+  --fgColor-default: var(--ps-fg);
+  --fgColor-muted: var(--ps-fg-muted);
+  --fgColor-danger: var(--ps-danger-fg);
+}
+
+.ps-root[data-theme="dark"] {
+  --color-neutral-muted: rgba(110, 118, 129, 0.4);
+  --color-accent-emphasis: #1f6feb;
+}
+
+.ps-root .ps-markdown {
+  color: var(--ps-fg);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ps-root .ps-markdown .task-list-item {
+  list-style-type: none;
+}
+
+.ps-root .ps-markdown .task-list-item-checkbox {
+  margin: 0 0.2em 0.25em -1.4em;
+  vertical-align: middle;
+}
+
+.ps-root .ps-markdown-source {
+  margin: 0;
+  padding: 16px;
+  overflow: auto;
+  border-radius: 6px;
+  background: var(--ps-bg-subtle);
+  color: var(--ps-fg);
+  font-family: var(--ps-font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}

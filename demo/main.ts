@@ -2,6 +2,7 @@ import { renderScene } from "../src/index";
 import type { Scene, SceneTheme } from "../src/scene";
 import { renderChrome } from "./chrome";
 import { renderLandingPage } from "./landing";
+import "@primer/css/dist/markdown.css";
 import "../src/styles/app.css";
 import "./chrome.css";
 import "./landing.css";
