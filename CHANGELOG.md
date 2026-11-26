@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/radomir-dev/pr-scene/compare/v1.2.0...v1.2.1) (2026-11-26)
+
+
+### Bug Fixes
+
+* **demo:** describe the real purpose on the landing page and in metadata ([426ddf4](https://github.com/radomir-dev/pr-scene/commit/426ddf4b87459b9c3c2b0cf44a380f1e9dcb5d59))
+
 # [1.2.0](https://github.com/radomir-dev/pr-scene/compare/v1.1.1...v1.2.0) (2026-11-26)
 
 

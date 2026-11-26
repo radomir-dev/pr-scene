@@ -1,6 +1,6 @@
 {
   "name": "pr-scene",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Render believable pull request scenes to demo what a GitHub Action posts",
   "keywords": [
     "demo",
