@@ -6,9 +6,9 @@ function validateScene(value): string[];
 
 ## Parameters
 
-| Parameter | Type      |
-| --------- | --------- |
-| `value`   | `unknown` |
+| Parameter | Type |
+| ------ | ------ |
+| `value` | `unknown` |
 
 ## Returns
 

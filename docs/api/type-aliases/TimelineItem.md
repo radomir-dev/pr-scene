@@ -1,22 +1,22 @@
 # Type Alias: TimelineItem
 
 ```ts
-type TimelineItem =
+type TimelineItem = 
   | {
-      comment: Comment;
-      kind: "comment";
-    }
+  comment: Comment;
+  kind: "comment";
+}
   | {
-      kind: "checks";
-    }
+  kind: "checks";
+}
   | {
-      kind: "review";
-      review: Review;
-    }
+  kind: "review";
+  review: Review;
+}
   | {
-      actor?: string;
-      at?: string;
-      kind: "merged";
-      sha?: string;
-    };
+  actor?: string;
+  at?: string;
+  kind: "merged";
+  sha?: string;
+};
 ```

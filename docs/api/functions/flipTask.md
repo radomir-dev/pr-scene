@@ -6,10 +6,10 @@ function flipTask(source, index): string;
 
 ## Parameters
 
-| Parameter | Type     |
-| --------- | -------- |
-| `source`  | `string` |
-| `index`   | `number` |
+| Parameter | Type |
+| ------ | ------ |
+| `source` | `string` |
+| `index` | `number` |
 
 ## Returns
 

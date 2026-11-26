@@ -6,9 +6,9 @@ function countTasks(source): number;
 
 ## Parameters
 
-| Parameter | Type     |
-| --------- | -------- |
-| `source`  | `string` |
+| Parameter | Type |
+| ------ | ------ |
+| `source` | `string` |
 
 ## Returns
 

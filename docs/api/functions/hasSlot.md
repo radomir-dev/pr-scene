@@ -6,10 +6,10 @@ function hasSlot(source, name): boolean;
 
 ## Parameters
 
-| Parameter | Type     |
-| --------- | -------- |
-| `source`  | `string` |
-| `name`    | `string` |
+| Parameter | Type |
+| ------ | ------ |
+| `source` | `string` |
+| `name` | `string` |
 
 ## Returns
 

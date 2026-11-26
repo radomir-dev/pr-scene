@@ -6,10 +6,10 @@ function renderScene(scene, options?): string;
 
 ## Parameters
 
-| Parameter  | Type                              |
-| ---------- | --------------------------------- |
-| `scene`    | [`Scene`](../interfaces/Scene.md) |
-| `options?` | `RenderOptions`                   |
+| Parameter | Type |
+| ------ | ------ |
+| `scene` | [`Scene`](../interfaces/Scene.md) |
+| `options?` | `RenderOptions` |
 
 ## Returns
 

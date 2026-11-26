@@ -2,6 +2,6 @@
 
 ## Properties
 
-| Property                | Type     |
-| ----------------------- | -------- |
+| Property | Type |
+| ------ | ------ |
 | <a id="now"></a> `now?` | `number` |

@@ -6,10 +6,10 @@ function relativeTime(iso, now?): string;
 
 ## Parameters
 
-| Parameter | Type     |
-| --------- | -------- |
-| `iso`     | `string` |
-| `now?`    | `number` |
+| Parameter | Type |
+| ------ | ------ |
+| `iso` | `string` |
+| `now?` | `number` |
 
 ## Returns
 

@@ -2,6 +2,6 @@
 
 ## Properties
 
-| Property                  | Type                                              |
-| ------------------------- | ------------------------------------------------- |
+| Property | Type |
+| ------ | ------ |
 | <a id="mode"></a> `mode?` | [`MarkdownMode`](../type-aliases/MarkdownMode.md) |

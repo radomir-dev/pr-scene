@@ -6,9 +6,9 @@ function assertScene(value): asserts value is Scene;
 
 ## Parameters
 
-| Parameter | Type      |
-| --------- | --------- |
-| `value`   | `unknown` |
+| Parameter | Type |
+| ------ | ------ |
+| `value` | `unknown` |
 
 ## Returns
 
