@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/radomir-dev/pr-scene/compare/v1.2.1...v1.2.2) (2026-11-26)
+
+
+### Bug Fixes
+
+* **demo:** lead with demo your action ([84b9406](https://github.com/radomir-dev/pr-scene/commit/84b9406c05fb8c19e16a8fd8942e56a843ab2c26))
+
 ## [1.2.1](https://github.com/radomir-dev/pr-scene/compare/v1.2.0...v1.2.1) (2026-11-26)
 
 
