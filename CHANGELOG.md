@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/radomir-dev/pr-scene/compare/v1.1.0...v1.1.1) (2026-11-26)
+
+
+### Bug Fixes
+
+* **styles:** load every stylesheet in the demo and storybook ([bb1a91d](https://github.com/radomir-dev/pr-scene/commit/bb1a91d3723fbab52ce1cfdf8d9643b73ac349be))
+
 # [1.1.0](https://github.com/radomir-dev/pr-scene/compare/v1.0.0...v1.1.0) (2026-11-26)
 
 
