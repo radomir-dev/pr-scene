@@ -63,8 +63,8 @@ function renderClosing(): string {
   return `  <section class="closing wrap" aria-label="Get started">
     <div class="install-card">
       <span class="feature-index">READY WHEN YOU ARE</span>
-      <p>Not on npm yet — clone the repository</p>
-      <code><span>$</span> git clone https://github.com/radomir-dev/pr-scene</code>
+      <p>Add it to your demo page</p>
+      <code><span>$</span> npm i pr-scene</code>
     </div>
     <nav class="next-steps" aria-label="Explore pr-scene">
       <a href="${import.meta.env.BASE_URL}#live-scene">Live demo <span>↗</span></a>

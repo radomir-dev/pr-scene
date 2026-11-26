@@ -2,11 +2,13 @@
 
 Render a believable pull request — comments, checks, reviews and merge state — from plain JSON, so your GitHub Action's demo page can show what it does before anyone installs it. Framework-agnostic HTML in one scoped stylesheet.
 
-Not on npm yet; the playground lives at <https://radomir.dev/pr-scene/>.
+The playground lives at <https://radomir.dev/pr-scene/>.
 
 ## Install
 
-Not published yet. Clone the repository and run `npm install && npm run build`; see Development below.
+```sh
+npm i pr-scene
+```
 
 ## Quick start
 
@@ -104,11 +106,11 @@ Files stop at 150 lines, functions at 30, cognitive complexity at 5.
 
 ## Releasing
 
-Nothing is published yet.
-
 1. `npm run doctor`
 2. `npm run build`
-3. `npm publish --access public` from the tagged release commit, with provenance enabled by CI once the release workflow exists (#15).
+3. `npm publish --access public` from the release commit.
+
+Published by hand for now; switching the release workflow to npm trusted publishing is follow-up work (#15).
 
 The package is ESM-only. `files` ships `dist/`, which holds the compiled modules, declarations, `styles.css` and `scene.schema.json`; `sideEffects` names the stylesheet so the JavaScript stays tree-shakeable.
 
