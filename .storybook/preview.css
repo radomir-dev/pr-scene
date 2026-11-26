@@ -13,7 +13,7 @@ body {
   position: fixed;
   bottom: 8px;
   right: 12px;
-  color: #57606a;
+  color: var(--ps-fg-muted);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 11px;
   letter-spacing: 0.04em;

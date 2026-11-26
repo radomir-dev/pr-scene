@@ -4,11 +4,29 @@ import "../src/styles/index.css";
 import "./preview.css";
 
 const preview: Preview = {
+  globalTypes: {
+    theme: {
+      description: "Scene theme",
+      toolbar: {
+        title: "Theme",
+        icon: "mirror",
+        items: [
+          { value: "light", title: "Light" },
+          { value: "dark", title: "Dark" },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
+  initialGlobals: { theme: "light" },
   decorators: [
-    (story) => `<div class="story-shell">
+    (story, context) => {
+      const theme = context.globals.theme === "dark" ? "dark" : "light";
+      return `<div class="story-shell ps-root" data-theme="${theme}">
       ${story()}
       <span class="story-version">pr-scene v${__APP_VERSION__}</span>
-    </div>`,
+    </div>`;
+    },
   ],
   parameters: {
     controls: { expanded: true },

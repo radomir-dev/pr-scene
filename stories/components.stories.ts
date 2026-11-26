@@ -3,6 +3,7 @@ import { renderComment } from "../src/index";
 import type { Comment } from "../src/scene";
 import { actionsScene } from "../demo/scenes";
 import { renderScene } from "../src/index";
+import { themeFrom } from "./theme";
 
 const meta = { title: "Components" } satisfies Meta;
 
@@ -23,16 +24,18 @@ export const Comment: StoryObj<{ comment: Comment }> = {
 
 export const Header: StoryObj = {
   name: "PR header",
-  render: () =>
-    renderScene(actionsScene("running")).split('<div class="ps-timeline"')[0] + "</article></div>",
+  render: (_args, context) =>
+    renderScene(actionsScene("running"), { theme: themeFrom(context) }).split(
+      '<div class="ps-timeline"',
+    )[0] + "</article></div>",
 };
 
 export const Checks: StoryObj = {
   name: "Checks box",
-  render: () => renderScene(actionsScene("running")),
+  render: (_args, context) => renderScene(actionsScene("running"), { theme: themeFrom(context) }),
 };
 
 export const Timeline: StoryObj = {
   name: "Timeline",
-  render: () => renderScene(actionsScene("merged")),
+  render: (_args, context) => renderScene(actionsScene("merged"), { theme: themeFrom(context) }),
 };
