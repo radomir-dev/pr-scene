@@ -59,3 +59,7 @@ body {
     padding: 16px;
   }
 }
+
+html[data-theme="dark"] body {
+  background: #0d1117;
+}

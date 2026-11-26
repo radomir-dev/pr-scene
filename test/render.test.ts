@@ -34,3 +34,10 @@ describe("renderScene", () => {
     expect(renderScene(scene({ state: "merged" }))).toContain("ps-state--merged");
   });
 });
+
+describe("theme", () => {
+  it("sets the theme on the root wrapper", () => {
+    expect(renderScene(scene(), { theme: "dark" })).toContain('data-theme="dark"');
+    expect(renderScene(scene())).toContain('data-theme="light"');
+  });
+});

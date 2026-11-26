@@ -20,4 +20,6 @@ document.body.insertAdjacentHTML("afterbegin", chrome.header);
 document.body.insertAdjacentHTML("beforeend", chrome.footer);
 
 const root = document.querySelector<HTMLElement>("#scene");
-if (root) root.innerHTML = renderScene(scene);
+const theme = new URLSearchParams(location.search).get("theme") === "dark" ? "dark" : "light";
+document.documentElement.dataset.theme = theme;
+if (root) root.innerHTML = renderScene(scene, { theme });
