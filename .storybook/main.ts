@@ -8,7 +8,7 @@ const appVersion = process.env.APP_VERSION ?? pkg.version;
 
 const config: StorybookConfig = {
   stories: ["../stories/**/*.stories.ts"],
-  addons: ["@storybook/addon-docs", "@storybook/addon-a11y"],
+  addons: ["@storybook/addon-docs", "@storybook/addon-a11y", "@storybook/addon-vitest"],
   framework: { name: "@storybook/html-vite", options: {} },
   core: { disableTelemetry: true },
   viteFinal: (vite) => ({

@@ -20,6 +20,12 @@ const preview: Preview = {
   ],
   parameters: {
     controls: { expanded: true },
+    a11y: {
+      test: "error",
+      config: {
+        rules: [{ id: "heading-order", enabled: false }],
+      },
+    },
     backgrounds: { disable: true },
   },
 };

@@ -45,8 +45,8 @@
     "build:demo": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
-    "test:coverage": "vitest run --coverage",
+    "test": "vitest run --project=unit",
+    "test:coverage": "vitest run --project=unit --coverage",
     "doctor": "node scripts/doctor.ts",
     "lint": "oxlint src demo test scripts commitlint.config.js vite.config.ts vitest.config.ts",
     "format": "oxfmt src demo test/*.ts scripts vite.config.ts vitest.config.ts package.json tsconfig.json tsconfig.build.json .oxlintrc.json .oxfmtrc.json commitlint.config.js lefthook.yml .github/workflows/ci.yml",
@@ -61,7 +61,8 @@
     "docs": "node scripts/docs.mjs",
     "docs:check": "node scripts/docs.mjs --check",
     "storybook": "storybook dev -p 6006",
-    "build:storybook": "storybook build -o storybook-static"
+    "build:storybook": "storybook build -o storybook-static",
+    "test:stories": "vitest run --project=storybook"
   },
   "dependencies": {
     "dompurify": "^3.5.0",
@@ -81,8 +82,11 @@
     "@semantic-release/release-notes-generator": "^14.1.1",
     "@storybook/addon-a11y": "^10.6.9",
     "@storybook/addon-docs": "^10.6.9",
+    "@storybook/addon-vitest": "^10.6.9",
     "@storybook/html-vite": "^10.6.9",
     "@types/node": "^22.0.0",
+    "@vitest/browser": "^5.1.2",
+    "@vitest/browser-playwright": "^5.1.2",
     "@vitest/coverage-v8": "^5.1.2",
     "eslint": "^10.15.0",
     "eslint-plugin-sonarjs": "^4.2.3",

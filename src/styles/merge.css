@@ -19,7 +19,7 @@
   border-radius: 6px;
   background: var(--ps-success-emphasis);
   box-shadow: var(--ps-shadow);
-  color: var(--ps-bg);
+  color: #ffffff;
   font: inherit;
   font-weight: 600;
 }
@@ -34,7 +34,7 @@
 .ps-root .ps-merge-button--merged:disabled {
   border-color: var(--ps-done-emphasis);
   background: var(--ps-done-emphasis);
-  color: var(--ps-bg);
+  color: #ffffff;
 }
 
 .ps-root[data-theme="dark"] .ps-merge-button--merged,
