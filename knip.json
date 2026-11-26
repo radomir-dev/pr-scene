@@ -1,0 +1,19 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "entry": [
+    "src/index.ts",
+    "scripts/*.ts",
+    "scripts/*.mjs",
+    "e2e/*.spec.ts",
+    "e2e-shots/*.spec.ts",
+    "stories/**/*.stories.ts",
+    ".storybook/*.ts"
+  ],
+  "project": ["src/**/*.ts", "demo/**/*.ts", "scripts/**/*.ts", "test/**/*.ts", "stories/**/*.ts"],
+  "ignoreDependencies": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/release-notes-generator"
+  ]
+}

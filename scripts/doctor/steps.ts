@@ -47,8 +47,30 @@ export const STEPS: Step[] = [
     slow: true,
   },
   { name: "e2e", title: "e2e", phase: "independent", script: "test:e2e", slow: true },
+  {
+    name: "unused",
+    title: "unused files and dependencies",
+    phase: "independent",
+    script: "check:unused",
+    bin: "knip",
+  },
+  {
+    name: "deps",
+    title: "dependency rules",
+    phase: "independent",
+    script: "check:deps",
+    bin: "depcruise",
+  },
   { name: "build", title: "build", phase: "build", script: "build", bin: "tsc" },
   { name: "dist", title: "dist artifacts", phase: "post-build", needsBuild: true, run: verifyDist },
+  {
+    name: "package",
+    title: "package",
+    phase: "post-build",
+    script: "check:package",
+    needsBuild: true,
+  },
+  { name: "size", title: "size", phase: "post-build", script: "check:size", needsBuild: true },
 ];
 
 export async function readDoctorState(options: DoctorOptions): Promise<DoctorState> {

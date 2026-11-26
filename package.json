@@ -41,7 +41,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -p tsconfig.build.json && node scripts/build-css.mjs && node scripts/build-schema.mjs",
+    "build": "tsc -p tsconfig.build.json && node scripts/build-css.mjs && node scripts/build-schema.mjs && node scripts/fix-esm.mjs",
     "build:demo": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
@@ -62,13 +62,18 @@
     "docs:check": "node scripts/docs.mjs --check",
     "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build -o storybook-static",
-    "test:stories": "vitest run --project=storybook"
+    "test:stories": "vitest run --project=storybook",
+    "check:package": "publint --strict && attw --pack . --ignore-rules cjs-resolves-to-esm no-resolution && node scripts/check-pack.mjs",
+    "check:size": "size-limit",
+    "check:unused": "knip",
+    "check:deps": "depcruise src --config .dependency-cruiser.cjs"
   },
   "dependencies": {
     "dompurify": "^3.5.0",
     "marked": "^18.3.0"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
     "@commitlint/cli": "^21.2.4",
     "@commitlint/config-conventional": "^21.2.4",
     "@playwright/test": "^1.65.1",
@@ -80,6 +85,7 @@
     "@semantic-release/github": "^12.0.11",
     "@semantic-release/npm": "^13.2.0",
     "@semantic-release/release-notes-generator": "^14.1.1",
+    "@size-limit/file": "^14.3.0",
     "@storybook/addon-a11y": "^10.6.9",
     "@storybook/addon-docs": "^10.6.9",
     "@storybook/addon-vitest": "^10.6.9",
@@ -88,15 +94,19 @@
     "@vitest/browser": "^5.1.2",
     "@vitest/browser-playwright": "^5.1.2",
     "@vitest/coverage-v8": "^5.1.2",
+    "dependency-cruiser": "^18.9.0",
     "eslint": "^10.15.0",
     "eslint-plugin-sonarjs": "^4.2.3",
     "jsdom": "^31.0.1",
+    "knip": "^6.48.0",
     "lefthook": "^2.2.4",
     "lint-staged": "^17.6.2",
     "listr2": "^11.4.1",
     "oxfmt": "0.80.0",
     "oxlint": "^1.95.0",
+    "publint": "^0.3.25",
     "semantic-release": "^25.0.9",
+    "size-limit": "^14.3.0",
     "storybook": "^10.6.9",
     "typedoc": "^0.28.20",
     "typedoc-plugin-markdown": "^4.14.1",
@@ -119,6 +129,18 @@
       "oxfmt"
     ]
   },
+  "size-limit": [
+    {
+      "name": "library entry",
+      "path": "dist/index.js",
+      "limit": "10 kB"
+    },
+    {
+      "name": "stylesheet",
+      "path": "dist/styles.css",
+      "limit": "25 kB"
+    }
+  ],
   "engines": {
     "node": ">=22"
   }

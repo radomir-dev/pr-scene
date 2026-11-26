@@ -1,7 +1,7 @@
 import { flipTask, hasSlot, replaceSlot } from "../src/index";
 import type { Comment, Scene } from "../src/scene";
 
-export const RUN_URL = "https://github.com/acme/storefront/actions/runs/1234";
+const RUN_URL = "https://github.com/acme/storefront/actions/runs/1234";
 const SHA = "a8f92c1";
 const RUN_LINK = `[Workflow run #1234](${RUN_URL})`;
 const RUNNING_SLOTS = {
