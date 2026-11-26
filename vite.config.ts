@@ -21,7 +21,8 @@ const repoName = repoSlug().split("/").pop() ?? pkg.name;
 const appVersion = process.env.APP_VERSION ?? pkg.version;
 
 export default defineConfig(({ command, isPreview }) => {
-  const base = command === "build" || isPreview ? `/${repoName}/` : "/";
+  const base =
+    command === "build" || isPreview ? (process.env.SITE_BASE_PATH ?? `/${repoName}/`) : "/";
   const canonicalUrl = `https://radomir.dev${base}`;
   return {
     base,
