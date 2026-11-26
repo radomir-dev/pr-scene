@@ -15,6 +15,12 @@ Node 22 or newer. `mise install` picks it up from `mise.toml`.
 3. `npm test` runs the unit tests
 4. `npm run build` emits `dist/` with ESM, types and `styles.css`
 
+## Checks
+
+1. `npm run doctor` runs every check: typecheck, lint, format, coverage, build and dist verification.
+2. `npm run doctor -- --fast` skips the slow ones, which is what CI runs.
+3. `npm install` installs the lefthook hooks; `LEFTHOOK=0` skips them for one command.
+
 ## Layout
 
 1. `src/` is the library: scene types, escaping and renderers.

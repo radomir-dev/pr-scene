@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "typescript", "unicorn", "oxc", "import", "vitest"],
+  "jsPlugins": ["eslint-plugin-sonarjs"],
+  "rules": {
+    "max-lines": ["error", { "max": 150, "skipBlankLines": true, "skipComments": true }],
+    "max-lines-per-function": [
+      "error",
+      { "max": 30, "skipBlankLines": true, "skipComments": true }
+    ],
+    "sonarjs/cognitive-complexity": ["error", 5]
+  },
+  "ignorePatterns": ["dist/**", "dist-demo/**", "coverage/**", "node_modules/**"]
+}

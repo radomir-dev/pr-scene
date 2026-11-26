@@ -1,0 +1,23 @@
+# LEFTHOOK=0 skips every hook for one command.
+pre-commit:
+  skip:
+    - run: test -n "$CI"
+  jobs:
+    - name: lint-staged
+      run: npx lint-staged --concurrent false
+
+commit-msg:
+  skip:
+    - run: test -n "$CI"
+  jobs:
+    - name: commitlint
+      run: npx commitlint --edit {1}
+
+pre-push:
+  skip:
+    - run: test -n "$CI"
+  jobs:
+    - name: typecheck
+      run: npm run typecheck
+    - name: doctor
+      run: npm run doctor -- --fast

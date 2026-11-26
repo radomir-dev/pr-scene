@@ -46,21 +46,43 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "lint": "oxlint src demo test scripts",
-    "format": "oxfmt src demo test scripts vite.config.ts vitest.config.ts package.json tsconfig.json tsconfig.build.json",
-    "format:check": "oxfmt --check src demo test scripts vite.config.ts vitest.config.ts package.json tsconfig.json tsconfig.build.json"
+    "doctor": "node scripts/doctor.ts",
+    "lint": "oxlint src demo test scripts commitlint.config.js vite.config.ts vitest.config.ts",
+    "format": "oxfmt src demo test scripts vite.config.ts vitest.config.ts package.json tsconfig.json tsconfig.build.json .oxlintrc.json .oxfmtrc.json commitlint.config.js lefthook.yml .github/workflows/ci.yml",
+    "format:check": "oxfmt --check src demo test scripts vite.config.ts vitest.config.ts package.json tsconfig.json tsconfig.build.json .oxlintrc.json .oxfmtrc.json commitlint.config.js lefthook.yml .github/workflows/ci.yml",
+    "check": "npm run lint && npm run format:check",
+    "prepare": "lefthook install",
+    "icons": "node scripts/generate-icons.mjs"
   },
-  "dependencies": {
-    "@primer/octicons": "^19.43.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@primer/octicons": "^19.43.0",
     "@types/node": "^22.0.0",
     "@vitest/coverage-v8": "^5.1.2",
-    "oxfmt": "^0.80.0",
+    "eslint": "^10.15.0",
+    "eslint-plugin-sonarjs": "^4.2.3",
+    "lefthook": "^2.2.4",
+    "lint-staged": "^17.6.2",
+    "listr2": "^11.4.1",
+    "oxfmt": "0.80.0",
     "oxlint": "^1.95.0",
     "typescript": "^5.9.0",
     "vite": "^8.4.0",
     "vitest": "^5.1.2"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,mjs,cjs}": [
+      "oxlint --fix",
+      "oxfmt"
+    ],
+    "**/*.{json,yml,yaml,md,css,html}": [
+      "oxfmt"
+    ],
+    "{src,demo}/**/!(*.d).ts": [
+      "vitest related --run --passWithNoTests=false"
+    ]
   },
   "engines": {
     "node": ">=22"
