@@ -1,0 +1,57 @@
+.scene-card .playground-controls {
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid var(--line, #d0d7de);
+  border-radius: 0;
+  background: var(--surface-alt, #f6f8fa);
+}
+
+.playground-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  border: 1px solid var(--ps-border, #d0d7de);
+  border-radius: 8px;
+  background: var(--ps-bg-subtle, #f6f8fa);
+  font-size: 12px;
+}
+
+.playground-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ps-fg-muted, #59636e);
+}
+
+.playground-field select {
+  padding: 4px 8px;
+  border: 1px solid var(--ps-border, #d0d7de);
+  border-radius: 6px;
+  background: var(--ps-bg, #ffffff);
+  color: var(--ps-fg, #1f2328);
+  font: inherit;
+}
+
+.playground-hide {
+  margin-left: auto;
+  padding: 4px 10px;
+  border: 1px solid var(--ps-border, #d0d7de);
+  border-radius: 6px;
+  background: var(--ps-bg, #ffffff);
+  color: var(--ps-fg, #1f2328);
+  font: inherit;
+  cursor: pointer;
+}
+
+.playground-hint {
+  flex-basis: 100%;
+  margin: 0;
+  color: #9a6700;
+}
+
+.playground-headless .playground-controls {
+  display: none;
+}

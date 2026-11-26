@@ -24,6 +24,7 @@ function renderHero(): string {
         <span class="scene-live"><i></i> LIVE</span>
       </div>
       <div class="scene-heading"><span>Pull request preview</span><span>renderScene()</span></div>
+      <div class="js-controls"></div>
       <div class="scene-shell"><div class="js-live-scene"></div></div>
       <div class="scene-caption"><span class="caption-mark">↗</span> Rendered from a typed scene, not a screenshot.</div>
     </div>
