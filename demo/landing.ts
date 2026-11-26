@@ -9,12 +9,12 @@ ${renderClosing()}
 function renderHero(): string {
   return `  <section class="hero wrap" aria-labelledby="hero-title">
     <div class="hero-copy">
-      <p class="eyebrow"><span></span> A little more life in every PR</p>
-      <h1 id="hero-title">Pull requests,<br /><em>rendered right.</em></h1>
-      <p class="hero-pitch">Demo your action.</p>
+      <p class="eyebrow"><span></span> For your action's demo page</p>
+      <h1 id="hero-title">A pull request,<br /><em>just for the demo.</em></h1>
+      <p class="hero-pitch">Render a believable PR — comments, checks, reviews and merge state — so people can see what your action does before they install it.</p>
       <div class="hero-cta">
         <a class="button button--primary" href="#live-scene">See the scene <span aria-hidden="true">↘</span></a>
-        <span class="hero-note">Render a believable pull request, so people can see what your action does before they install it.</span>
+        <span class="hero-note">No real pull request, token or workflow run.</span>
       </div>
     </div>
     <div class="scene-card" id="live-scene">
@@ -35,8 +35,8 @@ function renderHero(): string {
 function renderFeatures(): string {
   return `  <section class="features wrap" aria-labelledby="features-title">
     <div class="section-heading">
-      <p class="eyebrow">Small library. Better-looking updates.</p>
-      <h2 id="features-title">Give your bot a better way to say <em>“shipped.”</em></h2>
+      <p class="eyebrow">Small library. Honest demo.</p>
+      <h2 id="features-title">Show your action <em>doing its thing.</em></h2>
     </div>
     <div class="feature-grid">
       <article class="feature">
@@ -47,12 +47,12 @@ function renderFeatures(): string {
       <article class="feature">
         <span class="feature-index">02 / TYPE-SAFE</span>
         <h3>Scenes from data</h3>
-        <p>Pass a small typed object and get predictable markup back for a demo, doc or screenshot.</p>
+        <p>Same scene in, same HTML out — ready for a demo page or a screenshot.</p>
       </article>
       <article class="feature">
         <span class="feature-index">03 / YOUR ACTION</span>
         <h3>Your action on display</h3>
-        <p>Render the comments, checks and reviews your GitHub Action leaves behind, without wiring up a real pull request.</p>
+        <p>Render the comments, checks, reviews and merge state your action produces, without a real pull request.</p>
       </article>
     </div>
   </section>
