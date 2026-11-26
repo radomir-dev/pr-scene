@@ -55,10 +55,6 @@
   font-size: 12px;
 }
 
-.ps-root .ps-timeline {
-  min-height: 120px;
-}
-
 @media (max-width: 480px) {
   .ps-root .ps-page {
     padding: 16px;

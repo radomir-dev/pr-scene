@@ -12,6 +12,21 @@ export interface CheckRun {
   details?: string;
 }
 
+export interface AvatarSource {
+  author: string;
+  avatarUrl?: string;
+}
+
+export type ReviewState = "approved" | "changes-requested" | "commented";
+
+export interface Review {
+  author: string;
+  state: ReviewState;
+  body?: string;
+  avatarUrl?: string;
+  at?: string;
+}
+
 export interface CommentReaction {
   emoji: string;
   count: number;
@@ -37,9 +52,15 @@ export interface PullRequest {
   commits?: number;
 }
 
+export type TimelineItem =
+  | { kind: "comment"; comment: Comment }
+  | { kind: "checks" }
+  | { kind: "review"; review: Review }
+  | { kind: "merged"; actor?: string; sha?: string; at?: string };
+
 export interface Scene {
   pr: PullRequest;
+  timeline?: TimelineItem[];
   checks?: CheckRun[];
-  comments?: Comment[];
   mergeable?: boolean;
 }

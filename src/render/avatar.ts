@@ -1,11 +1,11 @@
 import { escapeHtml } from "../escape";
-import type { Comment } from "../scene";
+import type { AvatarSource } from "../scene";
 
-export function renderAvatar(comment: Comment): string {
-  const url = safeUrl(comment.avatarUrl);
+export function renderAvatar(source: AvatarSource): string {
+  const url = safeUrl(source.avatarUrl);
   const inner = url
     ? `<img class="ps-avatar-image" src="${escapeHtml(url)}" alt="" width="40" height="40">`
-    : `<span class="ps-avatar-initials" aria-hidden="true">${escapeHtml(initials(comment.author))}</span>`;
+    : `<span class="ps-avatar-initials" aria-hidden="true">${escapeHtml(initials(source.author))}</span>`;
   return `<div class="ps-avatar">${inner}</div>`;
 }
 

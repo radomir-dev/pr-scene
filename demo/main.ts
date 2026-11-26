@@ -19,12 +19,14 @@ const scene: Scene = {
     head: "feat/release-checklist",
     state: "open",
   },
-  comments: [
+  timeline: [
     {
-      author: "github-actions",
-      bot: true,
-      createdAt: new Date(Date.now() - 4 * 60 * 1000).toISOString(),
-      body: `### CI summary
+      kind: "comment",
+      comment: {
+        author: "github-actions",
+        bot: true,
+        createdAt: new Date(Date.now() - 4 * 60 * 1000).toISOString(),
+        body: `### CI summary
 
 | Check | Status |
 | :--- | :---: |
@@ -33,7 +35,9 @@ const scene: Scene = {
 
 - [x] OpenAPI validated
 - [ ] E2E smoke completed`,
+      },
     },
+    { kind: "checks" },
   ],
 };
 
