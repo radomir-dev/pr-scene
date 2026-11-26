@@ -11,6 +11,11 @@ const NAMES = [
   "check-circle-fill",
   "x-circle-fill",
   "dot-fill",
+  "info",
+  "light-bulb",
+  "report",
+  "alert",
+  "stop",
 ];
 
 const entries = NAMES.map((name) => {

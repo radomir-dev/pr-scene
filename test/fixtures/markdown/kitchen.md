@@ -10,6 +10,12 @@ Automated checks for commit [`a8f92c1`](https://github.com/acme/app/commit/a8f92
 
 > Waiting on the last job. ~~Skip~~ No rush.
 
+> [!NOTE]
+> Deployment waits for the last job.
+
+> [!WARNING]
+> This one is inline: check the log.
+
 #### Bundle impact
 
 ```

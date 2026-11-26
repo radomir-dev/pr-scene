@@ -57,3 +57,56 @@
   line-height: 1.5;
   white-space: pre-wrap;
 }
+
+.ps-root .markdown-alert {
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  border-left: 4px solid var(--ps-accent-fg);
+  border-radius: 6px;
+  background: var(--ps-bg-subtle);
+}
+
+.ps-root .markdown-alert-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 4px;
+  color: var(--ps-accent-fg);
+  font-weight: 600;
+}
+
+.ps-root .markdown-alert > p:last-child {
+  margin-bottom: 0;
+}
+
+.ps-root .markdown-alert-tip {
+  border-left-color: var(--ps-success-fg);
+}
+
+.ps-root .markdown-alert-tip .markdown-alert-title {
+  color: var(--ps-success-fg);
+}
+
+.ps-root .markdown-alert-important {
+  border-left-color: var(--ps-done-emphasis);
+}
+
+.ps-root .markdown-alert-important .markdown-alert-title {
+  color: var(--ps-done-emphasis);
+}
+
+.ps-root .markdown-alert-warning {
+  border-left-color: var(--ps-attention-fg);
+}
+
+.ps-root .markdown-alert-warning .markdown-alert-title {
+  color: var(--ps-attention-fg);
+}
+
+.ps-root .markdown-alert-caution {
+  border-left-color: var(--ps-danger-fg);
+}
+
+.ps-root .markdown-alert-caution .markdown-alert-title {
+  color: var(--ps-danger-fg);
+}

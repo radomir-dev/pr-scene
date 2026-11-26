@@ -22,6 +22,7 @@ function serialize(node: Node): string {
   if (node.nodeType !== 1) return "";
   const element = node as Element;
   if (element.tagName.toLowerCase() === "markdown-accessiblity-table") return children(element);
+  if (element.tagName.toLowerCase() === "svg") return "";
   const tag = element.tagName.toLowerCase();
   const classes = [...element.classList].filter((name) => !SKIPPED_CLASSES.has(name)).sort();
   const attributes = KEPT_ATTRIBUTES.filter((name) => element.hasAttribute(name)).map(

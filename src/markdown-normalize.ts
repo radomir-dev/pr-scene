@@ -1,9 +1,12 @@
+import { transformAlerts } from "./markdown-alerts";
+
 const TASK_SELECTOR = 'input[type="checkbox"]';
 const SHOW_COMMENT = 128;
 
 export function normalizeGitHubHtml(html: string): string {
   const doc = new DOMParser().parseFromString(`<body>${html}</body>`, "text/html");
   for (const input of doc.querySelectorAll<HTMLInputElement>(TASK_SELECTOR)) markTaskItem(input);
+  transformAlerts(doc.body);
   removeComments(doc.body);
   return doc.body.innerHTML;
 }

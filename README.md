@@ -68,6 +68,10 @@ The stylesheet ships light and dark tokens switched by `data-theme` on `.ps-root
 
 Comment bodies run through `marked` with GFM, are sanitised with DOMPurify, and get GitHub's task-list classes with their checkboxes enabled. `renderMarkdown(source, { mode: "source" })` returns an escaped `pre` instead, which keeps `<!-- slot:name -->` markers visible.
 
+## Known gaps
+
+Fenced code with a language renders as plain code; GitHub wraps it in syntax-highlighted spans, and pr-scene does not. GitHub alerts (`> [!NOTE]`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`) are supported and covered by the golden fixtures.
+
 ## Editing a comment
 
 The helpers mirror the `radomir-dev/actions` contract, so a demo can react the way a workflow does:
