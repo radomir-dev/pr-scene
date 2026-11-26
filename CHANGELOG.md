@@ -1,3 +1,16 @@
+# [1.4.0](https://github.com/radomir-dev/pr-scene/compare/v1.3.0...v1.4.0) (2026-11-26)
+
+
+### Bug Fixes
+
+* **demo:** enable the docs job whose status it reports ([fd87f3a](https://github.com/radomir-dev/pr-scene/commit/fd87f3a9107ecd5068942e647533a3b06ed3066c))
+* **styles:** keep words whole when a comment table is narrow ([bdd92f5](https://github.com/radomir-dev/pr-scene/commit/bdd92f5fdc66420661ebc1492ea592b03eb5d312))
+
+
+### Features
+
+* **demo:** lead with the demo-page promise ([f9bb5d1](https://github.com/radomir-dev/pr-scene/commit/f9bb5d1edf09f94e9d4129ee89ec8eb12d7fe560))
+
 # [1.3.0](https://github.com/radomir-dev/pr-scene/compare/v1.2.2...v1.3.0) (2026-11-26)
 
 
