@@ -1,40 +1,21 @@
 name: docs
 
 on:
-  push:
-    branches: [main]
   pull_request:
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   api:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref || github.ref_name }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
       - run: npm ci
       - name: Fail when the API reference is stale
-        if: github.event_name == 'pull_request'
         run: npm run docs:check
-      - name: Regenerate the API reference on main
-        if: github.event_name == 'push'
-        run: npm run docs
-      - name: Commit the regenerated reference
-        if: github.event_name == 'push'
-        run: |
-          if git diff --quiet docs/api; then
-            echo "docs are already current"
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/api
-          git commit -m "docs: regenerate the api reference [skip ci]"
-          git push
