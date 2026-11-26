@@ -5,3 +5,6 @@ coverage/
 .slim-*/
 *.tsbuildinfo
 dist-demo/
+screenshots/
+playwright-report/
+test-results/

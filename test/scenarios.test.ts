@@ -6,8 +6,8 @@ import { renderScene, validateScene } from "../src/index";
 describe("the scenario registry", () => {
   it("validates and renders every scenario", () => {
     for (const scenario of SCENARIOS) {
-      expect(validateScene(scenario.scene), scenario.id).toEqual([]);
-      expect(renderScene(scenario.scene), scenario.id).toContain('class="ps-root"');
+      expect(validateScene(scenario.scene)).toEqual([]);
+      expect(renderScene(scenario.scene)).toContain('class="ps-root"');
     }
   });
 

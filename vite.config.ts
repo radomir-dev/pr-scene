@@ -19,8 +19,8 @@ function repoSlug(): string {
 
 const repoName = repoSlug().split("/").pop() ?? pkg.name;
 
-export default defineConfig(({ command }) => {
-  const base = command === "build" ? `/${repoName}/` : "/";
+export default defineConfig(({ command, isPreview }) => {
+  const base = command === "build" || isPreview ? `/${repoName}/` : "/";
   const canonicalUrl = `https://radomir.dev${base}`;
   return {
     base,

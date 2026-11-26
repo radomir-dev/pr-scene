@@ -27,14 +27,18 @@ jobs:
 
   e2e:
     runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright:v1.65.1-noble
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
       - run: npm ci
-      - run: npm run doctor -- --only=e2e
+      - run: npm run test:e2e
+      - run: npm run shots
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screenshots
+          path: screenshots
+          if-no-files-found: warn
 
   commitlint:
     if: github.event_name == 'pull_request'

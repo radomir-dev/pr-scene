@@ -1,5 +1,5 @@
 import type { Scene } from "../src/scene";
-import { isRunning, mergeScene, passCheck, startChecks, toggleTaskInScene } from "./session";
+import { mergeScene, passCheck, startChecks, toggleTaskInScene } from "./session";
 
 const STEP_MS = 700;
 
@@ -15,6 +15,7 @@ interface Runtime {
   scene: Scene;
   original: Scene;
   timers: number[];
+  running: boolean;
   onChange: (scene: Scene) => void;
 }
 
@@ -23,6 +24,7 @@ export function createSession(initial: Scene, onChange: (scene: Scene) => void):
     scene: structuredClone(initial),
     original: structuredClone(initial),
     timers: [],
+    running: false,
     onChange,
   };
   return {
@@ -47,12 +49,17 @@ function commit(runtime: Runtime, next: Scene): void {
 function cancel(runtime: Runtime): void {
   for (const timer of runtime.timers) clearTimeout(timer);
   runtime.timers = [];
+  runtime.running = false;
 }
 
 function schedule(runtime: Runtime): void {
-  (runtime.scene.checks ?? []).forEach((_, index) => {
+  const checks = runtime.scene.checks ?? [];
+  checks.forEach((_, index) => {
     const timer = window.setTimeout(
-      () => commit(runtime, passCheck(runtime.scene, index)),
+      () => {
+        commit(runtime, passCheck(runtime.scene, index));
+        if (index === checks.length - 1) runtime.running = false;
+      },
       (index + 1) * STEP_MS,
     );
     runtime.timers.push(timer);
@@ -60,7 +67,8 @@ function schedule(runtime: Runtime): void {
 }
 
 function startRun(runtime: Runtime): void {
-  if (isRunning(runtime.scene) || (runtime.scene.checks ?? []).length === 0) return;
+  if (runtime.running || (runtime.scene.checks ?? []).length === 0) return;
+  runtime.running = true;
   commit(runtime, startChecks(runtime.scene));
   schedule(runtime);
 }
