@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/radomir-dev/pr-scene/compare/v1.1.1...v1.2.0) (2026-11-26)
+
+
+### Features
+
+* **markdown:** render GitHub alerts ([21328a2](https://github.com/radomir-dev/pr-scene/commit/21328a28f6273299cfacfdbddac012793bc6ac6d))
+
 ## [1.1.1](https://github.com/radomir-dev/pr-scene/compare/v1.1.0...v1.1.1) (2026-11-26)
 
 
