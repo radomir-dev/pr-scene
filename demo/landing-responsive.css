@@ -1,0 +1,98 @@
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    padding: 58px 0 66px;
+  }
+
+  .hero-copy {
+    max-width: 560px;
+  }
+
+  .hero h1 {
+    font-size: clamp(52px, 12vw, 72px);
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .feature {
+    min-height: 0;
+    padding: 18px 19px;
+  }
+
+  .feature h3 {
+    margin-top: 14px;
+  }
+
+  .closing {
+    grid-template-columns: 1fr;
+    padding-bottom: 54px;
+  }
+}
+
+@media (max-width: 420px) {
+  .wrap {
+    width: calc(100% - 36px);
+  }
+
+  .hero {
+    padding-top: 44px;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+
+  .hero-pitch {
+    font-size: 14px;
+  }
+
+  .hero-cta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .hero-note {
+    max-width: none;
+  }
+
+  .scene-window {
+    gap: 8px;
+    padding: 0 10px;
+    font-size: 8px;
+  }
+
+  .scene-shell {
+    padding: 3px;
+  }
+
+  .scene-shell .ps-page {
+    padding: 14px 11px;
+  }
+
+  .scene-shell .ps-title {
+    font-size: 15px;
+  }
+
+  .scene-caption {
+    padding: 10px 12px;
+  }
+
+  .next-steps {
+    padding: 8px 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

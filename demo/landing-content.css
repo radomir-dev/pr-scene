@@ -1,0 +1,121 @@
+.features {
+  padding: 0 0 78px;
+}
+
+.section-heading {
+  max-width: 620px;
+  margin: 0 0 28px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 13px;
+}
+
+.section-heading h2 {
+  font-size: clamp(32px, 4vw, 45px);
+  line-height: 1.08;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 13px;
+}
+
+.feature {
+  min-height: 148px;
+  padding: 21px 22px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+}
+
+.feature h3 {
+  margin: 21px 0 7px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+.feature p {
+  max-width: 290px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.closing {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: stretch;
+  gap: 13px;
+  padding-bottom: 74px;
+}
+
+.install-card {
+  padding: 25px 28px;
+  border-radius: 5px;
+  background: #202923;
+  color: #f5f3ec;
+}
+
+.install-card .feature-index {
+  color: #aab5aa;
+}
+
+.install-card p {
+  margin: 16px 0 11px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+}
+
+.install-card code {
+  color: #f5f3ec;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+}
+
+.install-card code span {
+  color: #87c99e;
+}
+
+.next-steps {
+  display: grid;
+  align-content: center;
+  padding: 9px 25px;
+  border: 1px solid var(--line);
+}
+
+.next-steps a {
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.next-steps a:last-child {
+  border: 0;
+}
+
+.next-steps a span {
+  color: var(--accent);
+}
+
+.next-steps a:hover {
+  color: var(--accent);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -3,7 +3,7 @@ const OCTOCAT = `<svg width="22" height="22" viewBox="0 0 16 16" fill="currentCo
 export function renderChrome(): { header: string; footer: string } {
   return {
     header: `<header class="ps-demo-bar">
-  <span class="ps-demo-brand">pr-scene</span>
+  <a class="ps-demo-brand" href="${import.meta.env.BASE_URL}" aria-label="pr-scene home">pr-scene<span>·</span></a>
   <a class="ps-demo-repo" href="${__REPO_URL__}" target="_blank" rel="noopener noreferrer" aria-label="Source on GitHub" title="Source on GitHub">${OCTOCAT}</a>
 </header>`,
     footer: `<footer class="ps-demo-watermarks">
