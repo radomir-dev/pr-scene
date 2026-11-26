@@ -2,7 +2,6 @@ export function renderLandingPage(): string {
   return `<main class="landing">
 ${renderHero()}
 ${renderFeatures()}
-${renderClosing()}
 </main>`;
 }
 
@@ -12,9 +11,10 @@ function renderHero(): string {
       <p class="eyebrow"><span></span> For your action's demo page</p>
       <h1 id="hero-title">A pull request,<br /><em>just for the demo.</em></h1>
       <p class="hero-pitch">Render a believable PR — comments, checks, reviews and merge state — so people can see what your action does before they install it.</p>
-      <div class="hero-cta">
-        <a class="button button--primary" href="#live-scene">See the scene <span aria-hidden="true">↘</span></a>
-        <span class="hero-note">No real pull request, token or workflow run.</span>
+      <div class="install-card hero-install">
+        <span class="feature-index">READY WHEN YOU ARE</span>
+        <p>Add it to your demo page</p>
+        <code><span>$</span> npm i pr-scene</code>
       </div>
     </div>
     <div class="scene-card" id="live-scene">
@@ -55,22 +55,6 @@ function renderFeatures(): string {
         <p>Render the comments, checks, reviews and merge state your action produces, without a real pull request.</p>
       </article>
     </div>
-  </section>
-`;
-}
-
-function renderClosing(): string {
-  return `  <section class="closing wrap" aria-label="Get started">
-    <div class="install-card">
-      <span class="feature-index">READY WHEN YOU ARE</span>
-      <p>Add it to your demo page</p>
-      <code><span>$</span> npm i pr-scene</code>
-    </div>
-    <nav class="next-steps" aria-label="Explore pr-scene">
-      <a href="${import.meta.env.BASE_URL}#live-scene">Live demo <span>↗</span></a>
-      <a href="${import.meta.env.BASE_URL}storybook/">Storybook <span>↗</span></a>
-      <a href="${__REPO_URL__}" target="_blank" rel="noopener noreferrer">Repository <span>↗</span></a>
-    </nav>
   </section>
 `;
 }

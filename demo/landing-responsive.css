@@ -26,11 +26,6 @@
   .feature h3 {
     margin-top: 14px;
   }
-
-  .closing {
-    grid-template-columns: 1fr;
-    padding-bottom: 54px;
-  }
 }
 
 @media (max-width: 420px) {
@@ -48,16 +43,6 @@
 
   .hero-pitch {
     font-size: 14px;
-  }
-
-  .hero-cta {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 11px;
-  }
-
-  .hero-note {
-    max-width: none;
   }
 
   .scene-window {
@@ -80,10 +65,6 @@
 
   .scene-caption {
     padding: 10px 12px;
-  }
-
-  .next-steps {
-    padding: 8px 17px;
   }
 }
 

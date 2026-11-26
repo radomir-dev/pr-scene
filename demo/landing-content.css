@@ -45,14 +45,6 @@
   line-height: 1.6;
 }
 
-.closing {
-  display: grid;
-  grid-template-columns: 1fr 0.8fr;
-  align-items: stretch;
-  gap: 13px;
-  padding-bottom: 74px;
-}
-
 .install-card {
   padding: 25px 28px;
   border-radius: 5px;
@@ -78,35 +70,6 @@
 
 .install-card code span {
   color: #87c99e;
-}
-
-.next-steps {
-  display: grid;
-  align-content: center;
-  padding: 9px 25px;
-  border: 1px solid var(--line);
-}
-
-.next-steps a {
-  display: flex;
-  justify-content: space-between;
-  padding: 11px 0;
-  border-bottom: 1px solid var(--line);
-  color: var(--ink);
-  font-size: 12px;
-  text-decoration: none;
-}
-
-.next-steps a:last-child {
-  border: 0;
-}
-
-.next-steps a span {
-  color: var(--accent);
-}
-
-.next-steps a:hover {
-  color: var(--accent);
 }
 
 @keyframes rise-in {

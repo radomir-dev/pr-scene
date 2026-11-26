@@ -21,7 +21,13 @@
   color: var(--accent);
 }
 
-.ps-demo-repo {
+.ps-demo-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ps-demo-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +42,7 @@
     transform 160ms ease;
 }
 
-.ps-demo-repo:hover {
+.ps-demo-icon:hover {
   transform: translateY(-2px);
   background: var(--ink);
   color: var(--page);

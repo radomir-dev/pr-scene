@@ -113,38 +113,7 @@ html {
   line-height: 1.7;
 }
 
-.hero-cta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 16px;
-  margin-top: 32px;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  gap: 22px;
-  min-height: 48px;
-  padding: 0 19px;
-  border-radius: 4px;
-  font-size: 13px;
-  font-weight: 700;
-  text-decoration: none;
-  transition:
-    transform 180ms ease,
-    background 180ms ease;
-}
-
-.button:hover {
-  transform: translateY(-2px);
-}
-
-.button--primary {
-  background: var(--ink);
-  color: var(--page);
-}
-
-.button--primary:hover {
-  background: var(--accent);
+.hero-install {
+  max-width: 360px;
+  margin-top: 36px;
 }
