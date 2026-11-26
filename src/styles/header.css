@@ -1,0 +1,50 @@
+.ps-root .ps-header-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ps-root .ps-state {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  color: var(--ps-bg);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ps-root .ps-state .ps-icon {
+  fill: currentColor;
+}
+
+.ps-root[data-theme="dark"] .ps-state {
+  color: var(--ps-fg);
+}
+
+.ps-root .ps-state--open {
+  background: var(--ps-success-emphasis);
+}
+
+.ps-root .ps-state--merged {
+  background: var(--ps-done-emphasis);
+}
+
+.ps-root .ps-state--closed {
+  background: var(--ps-danger-fg);
+}
+
+@media (max-width: 480px) {
+  .ps-root .ps-header-title {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .ps-root .ps-title {
+    overflow-wrap: anywhere;
+    font-size: 22px;
+  }
+}

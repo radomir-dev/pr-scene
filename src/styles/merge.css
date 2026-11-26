@@ -1,0 +1,59 @@
+.ps-root .ps-merge-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border-top: 1px solid var(--ps-border-muted);
+}
+
+.ps-root .ps-merge-copy {
+  margin: 0;
+  color: var(--ps-fg-muted);
+}
+
+.ps-root .ps-merge-button {
+  flex: 0 0 auto;
+  padding: 6px 14px;
+  border: 1px solid var(--ps-success-emphasis);
+  border-radius: 6px;
+  background: var(--ps-success-emphasis);
+  box-shadow: var(--ps-shadow);
+  color: var(--ps-bg);
+  font: inherit;
+  font-weight: 600;
+}
+
+.ps-root .ps-merge-button:disabled {
+  border-color: var(--ps-border);
+  background: var(--ps-bg-subtle);
+  color: var(--ps-fg-muted);
+}
+
+.ps-root .ps-merge-button--merged,
+.ps-root .ps-merge-button--merged:disabled {
+  border-color: var(--ps-done-emphasis);
+  background: var(--ps-done-emphasis);
+  color: var(--ps-bg);
+}
+
+.ps-root[data-theme="dark"] .ps-merge-button--merged,
+.ps-root[data-theme="dark"] .ps-merge-button--merged:disabled {
+  color: var(--ps-fg);
+}
+
+.ps-root .ps-merge-button:not(:disabled):hover {
+  background: var(--ps-success-fg);
+}
+
+.ps-root .ps-merge-button:focus-visible {
+  outline: 2px solid var(--ps-accent-fg);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .ps-root .ps-merge-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

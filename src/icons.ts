@@ -1,14 +1,6 @@
-import octicons from "@primer/octicons";
+import { ICON_PATHS } from "./icon-data";
 
-export type IconName =
-  | "git-pull-request"
-  | "git-merge"
-  | "comment"
-  | "kebab-horizontal"
-  | "chevron-down"
-  | "check-circle-fill"
-  | "x-circle-fill"
-  | "dot-fill";
+export type IconName = keyof typeof ICON_PATHS;
 
 export type IconSize = 16 | 28;
 
@@ -28,12 +20,7 @@ const STATUS: Record<CheckStatus, StatusSpec> = {
 };
 
 export function renderIcon(name: IconName, size: IconSize = 16): string {
-  return octicons[name]!.toSVG({
-    class: `ps-icon ps-icon--${size}`,
-    width: size,
-    height: size,
-    "aria-hidden": "true",
-  });
+  return `<svg class="ps-icon ps-icon--${size} octicon octicon-${name}" width="${size}" height="${size}" viewBox="0 0 16 16" aria-hidden="true" focusable="false">${ICON_PATHS[name]}</svg>`;
 }
 
 export function statusIcon(status: CheckStatus, size: IconSize = 16): string {
