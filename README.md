@@ -1,6 +1,6 @@
 # pr-scene
 
-Render GitHub pull request scenes from data: a header, a conversation timeline, comment cards, a checks box with its merge footer, and merge and review events. Framework-agnostic HTML with one scoped stylesheet, so a demo, a README image or a screenshot pipeline can show a believable PR without GitHub.
+Render GitHub pull request scenes from data: a header, a conversation timeline, comment cards, a checks box with its merge footer, and merge and review events. Framework-agnostic HTML with one scoped stylesheet, so a demo, README image or screenshot pipeline can show what a GitHub Action posts in a believable PR, without a real repository.
 
 Not on npm yet; the playground lives at <https://radomir.dev/pr-scene/>.
 

@@ -11,10 +11,10 @@ function renderHero(): string {
     <div class="hero-copy">
       <p class="eyebrow"><span></span> A little more life in every PR</p>
       <h1 id="hero-title">Pull requests,<br /><em>rendered right.</em></h1>
-      <p class="hero-pitch">A tiny TypeScript library for building believable PR scenes in GitHub Action comments.</p>
+      <p class="hero-pitch">A tiny TypeScript library for rendering believable pull request scenes, so you can demo a GitHub Action without a real repository.</p>
       <div class="hero-cta">
         <a class="button button--primary" href="#live-scene">See the scene <span aria-hidden="true">↘</span></a>
-        <span class="hero-note">Made for the comments your action leaves behind.</span>
+        <span class="hero-note">Show what your action posts, without the PR.</span>
       </div>
     </div>
     <div class="scene-card" id="live-scene">
@@ -47,12 +47,12 @@ function renderFeatures(): string {
       <article class="feature">
         <span class="feature-index">02 / TYPE-SAFE</span>
         <h3>Scenes from data</h3>
-        <p>Pass a small typed object. Get predictable markup back, ready for your comment.</p>
+        <p>Pass a small typed object and get predictable markup back for a demo, doc or screenshot.</p>
       </article>
       <article class="feature">
         <span class="feature-index">03 / YOUR ACTION</span>
-        <h3>Made to travel</h3>
-        <p>Use it wherever your GitHub Action prepares a useful update for a pull request.</p>
+        <h3>Your action on display</h3>
+        <p>Render the comments, checks and reviews your GitHub Action leaves behind, without wiring up a real pull request.</p>
       </article>
     </div>
   </section>
@@ -63,8 +63,8 @@ function renderClosing(): string {
   return `  <section class="closing wrap" aria-label="Get started">
     <div class="install-card">
       <span class="feature-index">READY WHEN YOU ARE</span>
-      <p>Add it to your action</p>
-      <code><span>$</span> npm i pr-scene</code>
+      <p>Not on npm yet — clone the repository</p>
+      <code><span>$</span> git clone https://github.com/radomir-dev/pr-scene</code>
     </div>
     <nav class="next-steps" aria-label="Explore pr-scene">
       <a href="${import.meta.env.BASE_URL}#live-scene">Live demo <span>↗</span></a>
