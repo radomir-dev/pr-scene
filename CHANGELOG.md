@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/radomir-dev/pr-scene/compare/v1.2.2...v1.3.0) (2026-11-26)
+
+
+### Features
+
+* **demo:** show long running optional checks in the sticky comment ([86cd2c1](https://github.com/radomir-dev/pr-scene/commit/86cd2c1bf5a2d398b9568897beda2a98bd3825c4))
+* **storybook:** switch light and dark from the toolbar ([3debf35](https://github.com/radomir-dev/pr-scene/commit/3debf35d061a75ececee2fd2ad92fba3abb1b473))
+
 ## [1.2.2](https://github.com/radomir-dev/pr-scene/compare/v1.2.1...v1.2.2) (2026-11-26)
 
 
