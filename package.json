@@ -36,11 +36,12 @@
       "import": "./dist/index.js"
     },
     "./styles.css": "./dist/styles.css",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./scene.schema.json": "./dist/scene.schema.json"
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -p tsconfig.build.json && node scripts/build-css.mjs",
+    "build": "tsc -p tsconfig.build.json && node scripts/build-css.mjs && node scripts/build-schema.mjs",
     "build:demo": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",

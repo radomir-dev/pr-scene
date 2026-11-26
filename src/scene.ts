@@ -58,9 +58,14 @@ export type TimelineItem =
   | { kind: "review"; review: Review }
   | { kind: "merged"; actor?: string; sha?: string; at?: string };
 
+export interface SceneView {
+  theme?: SceneTheme;
+}
+
 export interface Scene {
   pr: PullRequest;
   timeline?: TimelineItem[];
   checks?: CheckRun[];
   mergeable?: boolean;
+  view?: SceneView;
 }

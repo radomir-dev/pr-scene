@@ -4,6 +4,8 @@ export { renderComment } from "./render/comment";
 export { renderTimeline } from "./render/timeline";
 export { relativeTime } from "./render/relative-time";
 export { renderScene } from "./render/scene";
+export { SCENE_SCHEMA } from "./scene-schema";
+export { assertScene, validateScene } from "./validate";
 export type { CheckStatus, IconName, IconSize } from "./icons";
 export type { MarkdownMode, MarkdownOptions } from "./markdown";
 export type { CommentOptions } from "./render/comment";
@@ -18,5 +20,6 @@ export type {
   ReviewState,
   Scene,
   SceneTheme,
+  SceneView,
   TimelineItem,
 } from "./scene";

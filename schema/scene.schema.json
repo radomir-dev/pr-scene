@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://radomir.dev/pr-scene/scene.schema.json",
+  "title": "pr-scene scene",
+  "type": "object",
+  "required": ["pr"],
+  "additionalProperties": false,
+  "properties": {
+    "pr": {
+      "type": "object",
+      "required": ["title", "number", "author", "base", "head", "state"],
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "number": {
+          "type": "integer"
+        },
+        "author": {
+          "type": "string"
+        },
+        "base": {
+          "type": "string"
+        },
+        "head": {
+          "type": "string"
+        },
+        "state": {
+          "enum": ["open", "merged", "closed"]
+        },
+        "commits": {
+          "type": "integer"
+        }
+      }
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "required": ["kind", "comment"],
+            "properties": {
+              "kind": {
+                "const": "comment"
+              },
+              "comment": {
+                "type": "object",
+                "required": ["author", "body"],
+                "additionalProperties": false,
+                "properties": {
+                  "author": {
+                    "type": "string"
+                  },
+                  "body": {
+                    "type": "string"
+                  },
+                  "bot": {
+                    "type": "boolean"
+                  },
+                  "avatarUrl": {
+                    "type": "string"
+                  },
+                  "createdAt": {
+                    "type": "string"
+                  },
+                  "edited": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["kind"],
+            "properties": {
+              "kind": {
+                "const": "checks"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["kind", "review"],
+            "properties": {
+              "kind": {
+                "const": "review"
+              },
+              "review": {
+                "type": "object",
+                "required": ["author", "state"],
+                "additionalProperties": false,
+                "properties": {
+                  "author": {
+                    "type": "string"
+                  },
+                  "state": {
+                    "enum": ["approved", "changes-requested", "commented"]
+                  },
+                  "body": {
+                    "type": "string"
+                  },
+                  "avatarUrl": {
+                    "type": "string"
+                  },
+                  "at": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["kind"],
+            "properties": {
+              "kind": {
+                "const": "merged"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "sha": {
+                "type": "string"
+              },
+              "at": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "enum": ["passed", "failed", "running", "queued"]
+          },
+          "workflow": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "string"
+          },
+          "details": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "mergeable": {
+      "type": "boolean"
+    },
+    "view": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "theme": {
+          "enum": ["light", "dark"]
+        }
+      }
+    }
+  }
+}
