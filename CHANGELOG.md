@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/radomir-dev/pr-scene/compare/v1.6.1...v1.7.0) (2026-11-26)
+
+
+### Features
+
+* prepare the package for its first npm release ([a3cea2d](https://github.com/radomir-dev/pr-scene/commit/a3cea2d56843e0b0cda27ab65e0d881cf9be8f1b))
+
 ## [1.6.1](https://github.com/radomir-dev/pr-scene/compare/v1.6.0...v1.6.1) (2026-11-26)
 
 
