@@ -18,6 +18,7 @@ function repoSlug(): string {
 }
 
 const repoName = repoSlug().split("/").pop() ?? pkg.name;
+const appVersion = process.env.APP_VERSION ?? pkg.version;
 
 export default defineConfig(({ command, isPreview }) => {
   const base = command === "build" || isPreview ? `/${repoName}/` : "/";
@@ -36,7 +37,7 @@ export default defineConfig(({ command, isPreview }) => {
     ],
     build: { outDir: "dist-demo" },
     define: {
-      __APP_VERSION__: JSON.stringify(pkg.version),
+      __APP_VERSION__: JSON.stringify(appVersion),
       __REPO_URL__: JSON.stringify(`https://github.com/${repoSlug()}`),
     },
   };
