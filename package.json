@@ -107,7 +107,7 @@
     "oxfmt": "0.80.0",
     "oxlint": "^1.95.0",
     "publint": "^0.3.25",
-    "semantic-release": "^25.0.9",
+    "semantic-release": "^26.0.1",
     "size-limit": "^14.3.0",
     "storybook": "^10.6.9",
     "typedoc": "^0.28.20",
