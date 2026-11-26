@@ -14,6 +14,10 @@ export function flipTask(source: string, index: number): string {
   });
 }
 
+export function hasSlot(source: string, name: string): boolean {
+  return slotPattern(name).test(source);
+}
+
 export function replaceSlot(source: string, name: string, text: string): string {
   const pattern = slotPattern(name);
   if (!pattern.test(source)) throw new Error(`no slot "${name}" in the comment`);

@@ -5,16 +5,20 @@ import { parseState, toSearch } from "../demo/state";
 describe("parseState", () => {
   it("defaults to the first scenario and the system theme", () => {
     const { state, hints } = parseState(new URLSearchParams(), true);
-    expect(state.scenario.id).toBe("release-checklist");
+    expect(state.scenario.id).toBe("actions-running");
     expect(state.theme).toBe("dark");
     expect(state.controls).toBe(true);
     expect(hints).toEqual([]);
   });
 
   it("honours every parameter", () => {
-    const params = new URLSearchParams({ scenario: "merged", theme: "light", controls: "0" });
+    const params = new URLSearchParams({
+      scenario: "actions-merged",
+      theme: "light",
+      controls: "0",
+    });
     const { state } = parseState(params, true);
-    expect(state.scenario.id).toBe("merged");
+    expect(state.scenario.id).toBe("actions-merged");
     expect(state.theme).toBe("light");
     expect(state.controls).toBe(false);
   });
@@ -24,7 +28,7 @@ describe("parseState", () => {
       new URLSearchParams({ scenario: "nope", theme: "purple" }),
       false,
     );
-    expect(state.scenario.id).toBe("release-checklist");
+    expect(state.scenario.id).toBe("actions-running");
     expect(state.theme).toBe("light");
     expect(hints.join(" ")).toContain("Unknown scenario “nope”");
     expect(hints.join(" ")).toContain("Unknown theme “purple”");
@@ -34,7 +38,7 @@ describe("parseState", () => {
 describe("toSearch", () => {
   it("round-trips through parseState", () => {
     const { state } = parseState(
-      new URLSearchParams({ scenario: "merged", theme: "dark", controls: "0" }),
+      new URLSearchParams({ scenario: "actions-merged", theme: "dark", controls: "0" }),
       false,
     );
     const again = parseState(new URLSearchParams(toSearch(state)), false).state;
@@ -50,6 +54,6 @@ describe("toSearch", () => {
 describe("scenarioById", () => {
   it("reports the unknown id", () => {
     expect(scenarioById("nope").unknown).toBe("nope");
-    expect(scenarioById("merged").scenario.id).toBe("merged");
+    expect(scenarioById("actions-merged").scenario.id).toBe("actions-merged");
   });
 });

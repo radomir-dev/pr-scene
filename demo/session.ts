@@ -1,8 +1,20 @@
-import { flipTask, replaceSlots } from "../src/index";
+import { flipTask, hasSlot, replaceSlot } from "../src/index";
 import type { Comment, Scene } from "../src/scene";
 
 export const RUN_URL = "https://github.com/acme/storefront/actions/runs/1234";
 const SHA = "a8f92c1";
+const RUN_LINK = `[Workflow run #1234](${RUN_URL})`;
+const RUNNING_SLOTS = {
+  status: "🟡 Workflow running…",
+  preview: "🟡 Workflow running…",
+  footer: "",
+};
+const DONE_SLOTS = {
+  status: "✅ All checks passed",
+  preview: "✅ All checks passed",
+  footer: RUN_LINK,
+};
+const MERGED_SLOTS = { status: "🎉 Merged", preview: "🎉 Merged", footer: RUN_LINK };
 
 export function toggleTaskInScene(scene: Scene, index: number, at: string): Scene {
   return withFirstComment(scene, (comment) => ({
@@ -15,7 +27,7 @@ export function toggleTaskInScene(scene: Scene, index: number, at: string): Scen
 
 export function startChecks(scene: Scene): Scene {
   const checks = (scene.checks ?? []).map((check) => ({ ...check, status: "running" as const }));
-  return withSlots({ ...scene, checks }, { status: "🟡 Workflow running…", footer: "" });
+  return withSlots({ ...scene, checks }, RUNNING_SLOTS);
 }
 
 export function passCheck(scene: Scene, index: number): Scene {
@@ -24,10 +36,7 @@ export function passCheck(scene: Scene, index: number): Scene {
   );
   const next = { ...scene, checks };
   if (!allPassed(next)) return next;
-  return withSlots(next, {
-    status: "✅ All checks passed",
-    footer: `[Workflow run #1234](${RUN_URL})`,
-  });
+  return withSlots(next, DONE_SLOTS);
 }
 
 export function mergeScene(scene: Scene, at: string): Scene {
@@ -38,13 +47,7 @@ export function mergeScene(scene: Scene, at: string): Scene {
         ...(scene.timeline ?? []),
         { kind: "merged" as const, actor: scene.pr.author, sha: SHA, at },
       ];
-  return withSlots(
-    { ...scene, pr: { ...scene.pr, state: "merged" }, timeline },
-    {
-      status: "🎉 Merged",
-      footer: `[Workflow run #1234](${RUN_URL})`,
-    },
-  );
+  return withSlots({ ...scene, pr: { ...scene.pr, state: "merged" }, timeline }, MERGED_SLOTS);
 }
 
 export function isRunning(scene: Scene): boolean {
@@ -69,10 +72,14 @@ function withFirstComment(scene: Scene, update: (comment: Comment) => Comment): 
 function withSlots(scene: Scene, slots: Record<string, string>): Scene {
   return withFirstComment(scene, (comment) => ({
     ...comment,
-    body: hasSlots(comment.body) ? replaceSlots(comment.body, slots) : comment.body,
+    body: fillPresent(comment.body, slots),
   }));
 }
 
-function hasSlots(body: string): boolean {
-  return body.includes("<!-- slot:");
+function fillPresent(body: string, slots: Record<string, string>): string {
+  return Object.entries(slots).reduce(
+    (markdown, [name, text]) =>
+      hasSlot(markdown, name) ? replaceSlot(markdown, name, text) : markdown,
+    body,
+  );
 }
