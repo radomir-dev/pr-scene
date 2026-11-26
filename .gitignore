@@ -1,0 +1,7 @@
+node_modules/
+dist/
+coverage/
+.slim/
+.slim-*/
+*.tsbuildinfo
+dist-demo/

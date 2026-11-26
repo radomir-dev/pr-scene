@@ -1,0 +1,65 @@
+{
+  "name": "pr-scene",
+  "version": "0.0.0",
+  "description": "Render GitHub pull request scenes from fixtures for demos, docs and screenshots",
+  "keywords": [
+    "demo",
+    "fixtures",
+    "github",
+    "markdown",
+    "mock",
+    "pull-request",
+    "screenshot"
+  ],
+  "homepage": "https://radomir.dev/pr-scene/",
+  "bugs": {
+    "url": "https://github.com/radomir-dev/pr-scene/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radomir-dev/pr-scene.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.build.json && node scripts/build-css.mjs",
+    "build:demo": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint": "oxlint src demo test scripts",
+    "format": "oxfmt src demo test scripts vite.config.ts vitest.config.ts package.json tsconfig.json tsconfig.build.json",
+    "format:check": "oxfmt --check src demo test scripts vite.config.ts vitest.config.ts package.json tsconfig.json tsconfig.build.json"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^5.1.2",
+    "oxfmt": "^0.80.0",
+    "oxlint": "^1.95.0",
+    "typescript": "^5.9.0",
+    "vite": "^8.4.0",
+    "vitest": "^5.1.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
