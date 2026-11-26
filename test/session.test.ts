@@ -72,6 +72,17 @@ describe("simulated run", () => {
     expect(bodyOf(done)).toContain("All checks passed");
     expect(bodyOf(done)).toContain("actions/runs/1234");
   });
+
+  it("keeps skipped jobs skipped and counts them as settled", () => {
+    const base = scene();
+    base.checks = [...(base.checks ?? []), { name: "e2e", status: "skipped" }];
+    const started = startChecks(base);
+    expect(started.checks?.at(-1)?.status).toBe("skipped");
+
+    const done = passCheck(passCheck(started, 0), 1);
+    expect(allPassed(done)).toBe(true);
+    expect(done.checks?.at(-1)?.status).toBe("skipped");
+  });
 });
 
 describe("merging", () => {

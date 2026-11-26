@@ -54,13 +54,20 @@ function cancel(runtime: Runtime): void {
 
 function schedule(runtime: Runtime): void {
   const checks = runtime.scene.checks ?? [];
-  checks.forEach((_, index) => {
+  const indices = checks
+    .map((check, index) => (check.status === "skipped" ? -1 : index))
+    .filter((index) => index >= 0);
+  if (indices.length === 0) {
+    runtime.running = false;
+    return;
+  }
+  indices.forEach((index, order) => {
     const timer = window.setTimeout(
       () => {
         commit(runtime, passCheck(runtime.scene, index));
-        if (index === checks.length - 1) runtime.running = false;
+        if (order === indices.length - 1) runtime.running = false;
       },
-      (index + 1) * STEP_MS,
+      (order + 1) * STEP_MS,
     );
     runtime.timers.push(timer);
   });

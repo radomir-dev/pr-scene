@@ -30,13 +30,17 @@ export function toggleTaskInScene(scene: Scene, index: number, at: string): Scen
 }
 
 export function startChecks(scene: Scene): Scene {
-  const checks = (scene.checks ?? []).map((check) => ({ ...check, status: "running" as const }));
+  const checks = (scene.checks ?? []).map((check) =>
+    check.status === "skipped" ? check : { ...check, status: "running" as const },
+  );
   return withSlots({ ...scene, checks }, RUNNING_SLOTS);
 }
 
 export function passCheck(scene: Scene, index: number): Scene {
   const checks = (scene.checks ?? []).map((check, position) =>
-    position === index ? { ...check, status: "passed" as const } : check,
+    position === index && check.status !== "skipped"
+      ? { ...check, status: "passed" as const }
+      : check,
   );
   const next = { ...scene, checks };
   if (!allPassed(next)) return next;
@@ -60,7 +64,10 @@ export function isRunning(scene: Scene): boolean {
 
 export function allPassed(scene: Scene): boolean {
   const checks = scene.checks ?? [];
-  return checks.length > 0 && checks.every((check) => check.status === "passed");
+  return (
+    checks.length > 0 &&
+    checks.every((check) => check.status === "passed" || check.status === "skipped")
+  );
 }
 
 function withFirstComment(scene: Scene, update: (comment: Comment) => Comment): Scene {
