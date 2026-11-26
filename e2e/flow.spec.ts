@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 test("ticking a toggle runs the workflow and merges", async ({ page }) => {
   await page.goto("./?scenario=actions-running&theme=light&controls=0");
-  await page.locator(".ps-comment input[type=checkbox]").first().check();
+  await page.locator(".ps-comment input[type=checkbox]").nth(1).check();
 
   await expect(page.locator(".ps-comment-edited").first()).toBeVisible();
   await expect(page.locator(".ps-checks-title")).toHaveText("All checks have passed", {
