@@ -77,7 +77,7 @@
 }
 
 .ps-root .ps-comment-body .ps-markdown {
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 .ps-root .ps-comment-body .ps-markdown pre,
