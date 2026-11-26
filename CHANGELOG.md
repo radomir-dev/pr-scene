@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/radomir-dev/pr-scene/compare/v1.7.0...v1.8.0) (2026-11-26)
+
+
+### Features
+
+* **demo:** move the install card into the hero and link Storybook in the header ([ae9a046](https://github.com/radomir-dev/pr-scene/commit/ae9a0467c9dbc192d9c9f7daed6a308495a53797))
+
 # [1.7.0](https://github.com/radomir-dev/pr-scene/compare/v1.6.1...v1.7.0) (2026-11-26)
 
 
