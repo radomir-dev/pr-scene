@@ -15,21 +15,33 @@ const CHECKS: Record<ActionsVariant, CheckRun[]> = {
     { name: "Lint & typecheck", status: "passed", workflow: "CI", duration: "14s" },
     { name: "Unit & integration", status: "running", workflow: "CI", duration: "32s" },
     { name: "Docker build", status: "queued", workflow: "Deploy" },
+    { name: "Preview API docs", status: "running", workflow: "Docs" },
+    { name: "Mutation tests", status: "skipped", workflow: "Mutation" },
+    { name: "Visual regression tests", status: "skipped", workflow: "Visual" },
   ],
   passed: [
     { name: "Lint & typecheck", status: "passed", workflow: "CI", duration: "14s" },
     { name: "Unit & integration", status: "passed", workflow: "CI", duration: "1m 12s" },
     { name: "Docker build", status: "passed", workflow: "Deploy", duration: "48s" },
+    { name: "Preview API docs", status: "passed", workflow: "Docs", duration: "1m 4s" },
+    { name: "Mutation tests", status: "skipped", workflow: "Mutation" },
+    { name: "Visual regression tests", status: "skipped", workflow: "Visual" },
   ],
   failed: [
     { name: "Lint & typecheck", status: "passed", workflow: "CI", duration: "14s" },
     { name: "Unit & integration", status: "failed", workflow: "CI", duration: "38s" },
     { name: "Docker build", status: "passed", workflow: "Deploy", duration: "48s" },
+    { name: "Preview API docs", status: "failed", workflow: "Docs", duration: "24s" },
+    { name: "Mutation tests", status: "skipped", workflow: "Mutation" },
+    { name: "Visual regression tests", status: "skipped", workflow: "Visual" },
   ],
   merged: [
     { name: "Lint & typecheck", status: "passed", workflow: "CI", duration: "14s" },
     { name: "Unit & integration", status: "passed", workflow: "CI", duration: "1m 12s" },
     { name: "Docker build", status: "passed", workflow: "Deploy", duration: "48s" },
+    { name: "Preview API docs", status: "passed", workflow: "Docs", duration: "1m 4s" },
+    { name: "Mutation tests", status: "skipped", workflow: "Mutation" },
+    { name: "Visual regression tests", status: "skipped", workflow: "Visual" },
   ],
 };
 

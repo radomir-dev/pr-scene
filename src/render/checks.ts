@@ -8,7 +8,15 @@ const SAMPLE_LOG: Record<CheckStatus, string> = {
   failed: "Check failed. Review the output below.",
   running: "Check is still running.",
   queued: "Check is queued.",
+  skipped: "Skipped: the changed files did not match this job’s filter.",
 };
+
+interface CheckCounts {
+  passed: number;
+  failed: number;
+  pending: number;
+  skipped: number;
+}
 
 export function renderChecks(runs: CheckRun[], mergeable?: boolean, merged = false): string {
   const counts = countStatuses(runs);
@@ -30,24 +38,26 @@ function checksTitle(counts: { failed: number; pending: number }, runCount: numb
   return "All checks have passed";
 }
 
-function countStatuses(runs: CheckRun[]): { passed: number; failed: number; pending: number } {
-  return runs.reduce(
+function countStatuses(runs: CheckRun[]): CheckCounts {
+  return runs.reduce<CheckCounts>(
     (counts, run) => {
       if (run.status === "passed") counts.passed += 1;
       if (run.status === "failed") counts.failed += 1;
       if (run.status === "running" || run.status === "queued") counts.pending += 1;
+      if (run.status === "skipped") counts.skipped += 1;
       return counts;
     },
-    { passed: 0, failed: 0, pending: 0 },
+    { passed: 0, failed: 0, pending: 0, skipped: 0 },
   );
 }
 
-function checksSummary(counts: { passed: number; failed: number; pending: number }): string {
+function checksSummary(counts: CheckCounts): string {
   const successfulLabel = counts.passed === 1 ? "successful check" : "successful checks";
   const summary = [
     formatCount(counts.failed, "failing"),
     formatCount(counts.passed, successfulLabel),
     formatCount(counts.pending, "in progress"),
+    formatCount(counts.skipped, "skipped"),
   ].filter(Boolean);
   return summary.join(", ") || "No checks reported";
 }

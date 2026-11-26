@@ -46,13 +46,13 @@ A scene is a plain object. `renderScene(scene, { theme })` turns it into a full 
 
 ## CheckRun
 
-| Field      | Type                                            | Required | Meaning                                    |
-| :--------- | :---------------------------------------------- | :------: | :----------------------------------------- |
-| `name`     | `string`                                        |   yes    | Job name.                                  |
-| `status`   | `"passed" \| "failed" \| "running" \| "queued"` |   yes    | Drives the icon, summary and merge gate.   |
-| `workflow` | `string`                                        |    no    | Workflow badge text, defaults to `Checks`. |
-| `duration` | `string`                                        |    no    | Duration text such as `14s`.               |
-| `details`  | `string`                                        |    no    | Log shown in the native details drawer.    |
+| Field      | Type                                                         | Required | Meaning                                    |
+| :--------- | :----------------------------------------------------------- | :------: | :----------------------------------------- |
+| `name`     | `string`                                                     |   yes    | Job name.                                  |
+| `status`   | `"passed" \| "failed" \| "running" \| "queued" \| "skipped"` |   yes    | Drives the icon, summary and merge gate.   |
+| `workflow` | `string`                                                     |    no    | Workflow badge text, defaults to `Checks`. |
+| `duration` | `string`                                                     |    no    | Duration text such as `14s`.               |
+| `details`  | `string`                                                     |    no    | Log shown in the native details drawer.    |
 
 ## Validation
 

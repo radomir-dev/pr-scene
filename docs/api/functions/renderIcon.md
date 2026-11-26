@@ -6,10 +6,10 @@ function renderIcon(name, size?): string;
 
 ## Parameters
 
-| Parameter | Type | Default value |
-| ------ | ------ | ------ |
-| `name` | \| `"git-pull-request"` \| `"git-pull-request-closed"` \| `"git-merge"` \| `"comment"` \| `"kebab-horizontal"` \| `"chevron-down"` \| `"check-circle-fill"` \| `"x-circle-fill"` \| `"dot-fill"` \| `"info"` \| `"light-bulb"` \| `"report"` \| `"alert"` \| `"stop"` | `undefined` |
-| `size?` | [`IconSize`](../type-aliases/IconSize.md) | `16` |
+| Parameter | Type                                                                                                                                                                                                                                                                              | Default value |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `name`    | \| `"git-pull-request"` \| `"git-pull-request-closed"` \| `"git-merge"` \| `"comment"` \| `"kebab-horizontal"` \| `"chevron-down"` \| `"check-circle-fill"` \| `"x-circle-fill"` \| `"dot-fill"` \| `"skip"` \| `"info"` \| `"light-bulb"` \| `"report"` \| `"alert"` \| `"stop"` | `undefined`   |
+| `size?`   | [`IconSize`](../type-aliases/IconSize.md)                                                                                                                                                                                                                                         | `16`          |
 
 ## Returns
 

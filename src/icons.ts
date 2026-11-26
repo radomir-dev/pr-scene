@@ -4,7 +4,7 @@ export type IconName = keyof typeof ICON_PATHS;
 
 export type IconSize = 16 | 28;
 
-export type CheckStatus = "passed" | "failed" | "running" | "queued";
+export type CheckStatus = "passed" | "failed" | "running" | "queued" | "skipped";
 
 interface StatusSpec {
   icon?: IconName;
@@ -17,6 +17,7 @@ const STATUS: Record<CheckStatus, StatusSpec> = {
   failed: { icon: "x-circle-fill", tone: "failed", label: "Failed" },
   running: { tone: "running", label: "In progress" },
   queued: { icon: "dot-fill", tone: "queued", label: "Queued" },
+  skipped: { icon: "skip", tone: "skipped", label: "Skipped" },
 };
 
 export function renderIcon(name: IconName, size: IconSize = 16): string {

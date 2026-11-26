@@ -45,7 +45,7 @@ const CHECK: Schema = {
   additionalProperties: false,
   properties: {
     name: { type: "string" },
-    status: { enum: ["passed", "failed", "running", "queued"] },
+    status: { enum: ["passed", "failed", "running", "queued", "skipped"] },
     workflow: { type: "string" },
     duration: { type: "string" },
     details: { type: "string" },

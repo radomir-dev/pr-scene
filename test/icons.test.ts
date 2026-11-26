@@ -7,12 +7,14 @@ describe("statusIcon", () => {
     expect(statusIcon("failed")).toContain('aria-label="Failed"');
     expect(statusIcon("running")).toContain('aria-label="In progress"');
     expect(statusIcon("queued")).toContain('aria-label="Queued"');
+    expect(statusIcon("skipped")).toContain('aria-label="Skipped"');
   });
 
   it("spins only while running", () => {
     expect(statusIcon("running")).toContain("ps-spinner");
     expect(statusIcon("passed")).not.toContain("ps-spinner");
     expect(statusIcon("queued")).not.toContain("ps-spinner");
+    expect(statusIcon("skipped")).not.toContain("ps-spinner");
   });
 
   it("paints each status with its own tone", () => {

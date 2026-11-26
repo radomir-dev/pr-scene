@@ -11,6 +11,7 @@ const NAMES = [
   "check-circle-fill",
   "x-circle-fill",
   "dot-fill",
+  "skip",
   "info",
   "light-bulb",
   "report",

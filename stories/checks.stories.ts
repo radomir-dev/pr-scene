@@ -34,6 +34,19 @@ export const Failed: StoryObj = {
   render: (_args, context) => checks(FAILED, themeFrom(context)),
 };
 
+export const Skipped: StoryObj = {
+  name: "Skipped",
+  render: (_args, context) =>
+    checks(
+      [
+        { name: "Preview API docs", status: "passed", workflow: "Docs", duration: "1m 4s" },
+        { name: "Mutation tests", status: "skipped", workflow: "Mutation" },
+        { name: "Visual regression tests", status: "skipped", workflow: "Visual" },
+      ],
+      themeFrom(context),
+    ),
+};
+
 export const Empty: StoryObj = {
   name: "No runs reported",
   render: (_args, context) => checks([], themeFrom(context)),

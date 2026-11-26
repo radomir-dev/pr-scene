@@ -44,6 +44,15 @@ describe("check rows", () => {
   });
 });
 
+describe("skipped checks", () => {
+  it("counts them without blocking the merge", () => {
+    const html = renderChecks([run(), { name: "e2e", status: "skipped" }]);
+    expect(html).toContain("1 successful check, 1 skipped");
+    expect(html).toContain("All checks have passed");
+    expect(html).not.toMatch(/disabled>Merge pull request/);
+  });
+});
+
 describe("checks header copy", () => {
   it("distinguishes successful and pending checks", () => {
     expect(renderChecks([run()])).toContain("All checks have passed");

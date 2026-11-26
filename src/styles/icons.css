@@ -22,7 +22,8 @@
   color: var(--ps-attention-fg);
 }
 
-.ps-root .ps-status--queued {
+.ps-root .ps-status--queued,
+.ps-root .ps-status--skipped {
   color: var(--ps-fg-muted);
 }
 

@@ -1,5 +1,5 @@
 # Type Alias: CheckStatus
 
 ```ts
-type CheckStatus = "passed" | "failed" | "running" | "queued";
+type CheckStatus = "passed" | "failed" | "running" | "queued" | "skipped";
 ```
