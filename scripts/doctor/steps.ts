@@ -23,6 +23,14 @@ export const STEPS: Step[] = [
     bin: "vitest",
   },
   {
+    name: "storybook",
+    title: "storybook",
+    phase: "independent",
+    script: "build:storybook",
+    bin: "storybook",
+    slow: true,
+  },
+  {
     name: "docs",
     title: "docs",
     phase: "independent",

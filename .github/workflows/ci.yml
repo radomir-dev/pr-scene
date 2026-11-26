@@ -24,6 +24,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run doctor -- --fast
+      - run: npm run build:storybook
 
   e2e:
     runs-on: ubuntu-latest

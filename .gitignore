@@ -8,3 +8,4 @@ dist-demo/
 screenshots/
 playwright-report/
 test-results/
+storybook-static/
