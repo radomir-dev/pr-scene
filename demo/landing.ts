@@ -11,10 +11,10 @@ function renderHero(): string {
     <div class="hero-copy">
       <p class="eyebrow"><span></span> A little more life in every PR</p>
       <h1 id="hero-title">Pull requests,<br /><em>rendered right.</em></h1>
-      <p class="hero-pitch">A tiny TypeScript library for rendering believable pull request scenes, so you can demo a GitHub Action without a real repository.</p>
+      <p class="hero-pitch">Demo your action.</p>
       <div class="hero-cta">
         <a class="button button--primary" href="#live-scene">See the scene <span aria-hidden="true">↘</span></a>
-        <span class="hero-note">Show what your action posts, without the PR.</span>
+        <span class="hero-note">Render a believable pull request, so people can see what your action does before they install it.</span>
       </div>
     </div>
     <div class="scene-card" id="live-scene">
