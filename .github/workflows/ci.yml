@@ -30,6 +30,8 @@ jobs:
     container: mcr.microsoft.com/playwright:v1.65.1-noble
     steps:
       - uses: actions/checkout@v4
+      - name: Trust the workspace for git hooks
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - run: npm ci
       - run: npm run test:e2e
       - run: npm run shots
