@@ -1,6 +1,6 @@
 # pr-scene
 
-Renders GitHub pull request scenes from JSON fixtures: a TypeScript library, a Vite playground and Storybook. Private and solo-maintained for now.
+Renders GitHub pull request scenes from JSON fixtures: a TypeScript library, a Vite playground and Storybook. Solo-maintained.
 
 ## Speed over process
 

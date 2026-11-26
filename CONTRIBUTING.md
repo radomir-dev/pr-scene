@@ -1,6 +1,6 @@
 # Contributing
 
-Solo maintained and private while it takes shape, so work happens directly on `main`: commit and push, no branches, no pull requests.
+Solo maintained, so day-to-day work happens directly on `main`: commit and push, no feature branches. Issues and small pull requests are welcome; expect the maintainer to fold them in.
 
 ## Commit messages
 

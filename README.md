@@ -2,13 +2,11 @@
 
 Render GitHub pull request scenes from data: a header, a conversation timeline, comment cards, a checks box with its merge footer, and merge and review events. Framework-agnostic HTML with one scoped stylesheet, so a demo, a README image or a screenshot pipeline can show a believable PR without GitHub.
 
-Private and unpublished while it takes shape.
+Not on npm yet; the playground lives at <https://radomir.dev/pr-scene/>.
 
 ## Install
 
-```sh
-npm i pr-scene
-```
+Not published yet. Clone the repository and run `npm install && npm run build`; see Development below.
 
 ## Quick start
 
@@ -106,7 +104,7 @@ Files stop at 150 lines, functions at 30, cognitive complexity at 5.
 
 ## Releasing
 
-Nothing is published yet, and publishing waits until the repository is public.
+Nothing is published yet.
 
 1. `npm run doctor`
 2. `npm run build`
