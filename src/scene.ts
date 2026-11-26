@@ -12,6 +12,21 @@ export interface CheckRun {
   details?: string;
 }
 
+export interface CommentReaction {
+  emoji: string;
+  count: number;
+}
+
+export interface Comment {
+  author: string;
+  body: string;
+  bot?: boolean;
+  avatarUrl?: string;
+  createdAt?: string;
+  edited?: boolean;
+  reactions?: CommentReaction[];
+}
+
 export interface PullRequest {
   title: string;
   number: number;
@@ -25,5 +40,6 @@ export interface PullRequest {
 export interface Scene {
   pr: PullRequest;
   checks?: CheckRun[];
+  comments?: Comment[];
   mergeable?: boolean;
 }

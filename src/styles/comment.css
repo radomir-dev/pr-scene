@@ -1,0 +1,117 @@
+.ps-root .ps-comment-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.ps-root .ps-avatar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border: 1px solid var(--ps-border);
+  border-radius: 50%;
+  background: var(--ps-bg-subtle);
+}
+
+.ps-root .ps-avatar-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ps-root .ps-avatar-initials {
+  color: var(--ps-fg-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ps-root .ps-comment {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--ps-border);
+  border-radius: 6px;
+  background: var(--ps-bg);
+}
+
+.ps-root .ps-comment-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--ps-border);
+  border-radius: 6px 6px 0 0;
+  background: var(--ps-bg-subtle);
+  font-size: 14px;
+}
+
+.ps-root .ps-comment-author {
+  font-weight: 600;
+}
+
+.ps-root .ps-comment-bot {
+  padding: 0 6px;
+  border: 1px solid var(--ps-border);
+  border-radius: 999px;
+  color: var(--ps-fg-muted);
+  font-size: 11px;
+  line-height: 18px;
+}
+
+.ps-root .ps-comment-meta {
+  margin-left: 4px;
+  color: var(--ps-fg-muted);
+}
+
+.ps-root .ps-comment-edited {
+  color: var(--ps-fg-muted);
+}
+
+.ps-root .ps-comment-body {
+  padding: 16px;
+  overflow: hidden;
+}
+
+.ps-root .ps-comment-body .ps-markdown {
+  overflow-wrap: anywhere;
+}
+
+.ps-root .ps-comment-body .ps-markdown pre,
+.ps-root .ps-comment-body .ps-markdown table {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media (min-width: 640px) {
+  .ps-root .ps-comment {
+    position: relative;
+  }
+
+  .ps-root .ps-comment::before,
+  .ps-root .ps-comment::after {
+    position: absolute;
+    top: 11px;
+    left: -16px;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid solid outset;
+    content: "";
+  }
+
+  .ps-root .ps-comment::before {
+    border-width: 8px;
+    border-right-color: var(--ps-border);
+  }
+
+  .ps-root .ps-comment::after {
+    margin-top: 1px;
+    margin-left: 2px;
+    border-width: 7px;
+    border-right-color: var(--ps-bg-subtle);
+  }
+}

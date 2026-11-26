@@ -19,6 +19,22 @@ const scene: Scene = {
     head: "feat/release-checklist",
     state: "open",
   },
+  comments: [
+    {
+      author: "github-actions",
+      bot: true,
+      createdAt: new Date(Date.now() - 4 * 60 * 1000).toISOString(),
+      body: `### CI summary
+
+| Check | Status |
+| :--- | :---: |
+| **Lint** | ✅ Passed |
+| **Tests** | 🟡 Running |
+
+- [x] OpenAPI validated
+- [ ] E2E smoke completed`,
+    },
+  ],
 };
 
 const chrome = renderChrome();
