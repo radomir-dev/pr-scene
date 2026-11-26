@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/radomir-dev/pr-scene/compare/v1.4.0...v1.5.0) (2026-11-26)
+
+
+### Features
+
+* **storybook:** cover header, review, markdown and checks states ([1c4ae3a](https://github.com/radomir-dev/pr-scene/commit/1c4ae3a977224bde772bf4d03cb195f81743fe9f))
+
 # [1.4.0](https://github.com/radomir-dev/pr-scene/compare/v1.3.0...v1.4.0) (2026-11-26)
 
 
